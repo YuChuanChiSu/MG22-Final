@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class CharacterModel
 {
-    public enum Temperature
+    public enum  Temperature
     {
         Zero = 0, Standard = 25, Boil = 100
     }
