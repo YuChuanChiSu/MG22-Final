@@ -19,6 +19,12 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
             if (x == y)
                 return true;
 
+            if (CharacterController.Instance.HP - Damage <= 0)
+            {
+                OnHPNotEnough?.Invoke(y);
+                return false;
+            }
+
             switch (y)
             {
                 case CharacterForm.Ice:
@@ -41,7 +47,7 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     /// <summary>
     /// 伤害
     /// </summary>
-    public long Damage;
+    public static long Damage;
     
     /// <summary>
     /// 若要改变形态，直接对这个属性赋值即可
@@ -53,19 +59,19 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     }
 
     /// <summary>
-    /// 由提供外部的动画改变委托，参数为本次形态改变的结果
+    /// 由外部提供的动画改变回调，参数为本次形态改变的结果
     /// </summary>
     public UnityAction<CharacterForm> OnAnimationChanging { get; set; }
 
     /// <summary>
-    /// 由提供外部的贴图改变委托，参数为本次形态改变的结果
+    /// 由外部提供的贴图改变回调，参数为本次形态改变的结果
     /// </summary>
     public UnityAction<CharacterForm> OnSpriteChanging { get; set; }
 
     /// <summary>
-    /// 由提供外部的HP归零委托，参数为本次形态变换导致的最后一次伤害
+    /// 由外部提供的HP不足以形态转换的动画的回调，参数为本次希望改变的形态
     /// </summary>
-    public UnityAction<long> OnHPEmpty { get; set; }
+    public static UnityAction<CharacterForm> OnHPNotEnough { get; set; }
 
     private void Awake()
     {
@@ -77,14 +83,10 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     {
         if (args.PropertyName == nameof(Form))
         {
-            OnAnimationChanging(Form);
-            OnSpriteChanging(Form);
-
-            if (_chara.HP - Damage <= 0)
-                OnHPEmpty(Damage);
+            OnAnimationChanging?.Invoke(Form);
+            OnSpriteChanging?.Invoke(Form);
         }
     }
-
 
     private void OnDestroy()
     {
