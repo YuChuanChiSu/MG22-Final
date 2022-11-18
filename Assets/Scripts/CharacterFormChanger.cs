@@ -25,6 +25,12 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
                 return false;
             }
 
+            if (CharacterFormLock.isLocked(y))
+            {
+                OnCharacterFormIsLocked?.Invoke(y);
+                return false;
+            }
+
             switch (y)
             {
                 case CharacterForm.Ice:
@@ -72,6 +78,11 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     /// 由外部提供的HP不足以形态转换的动画的回调，参数为本次希望改变的形态
     /// </summary>
     public static UnityAction<CharacterForm> OnHPNotEnough { get; set; }
+
+    /// <summary>
+    /// 由外部提供的形态未解锁的动画的回调，参数为本次希望改变的形态
+    /// </summary>
+    public static UnityAction<CharacterForm> OnCharacterFormIsLocked { get; set; }
 
     private void Awake()
     {
