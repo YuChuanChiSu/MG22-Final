@@ -3,14 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// ÑªÌõ¿ØÖÆÆ÷
-/// </summary>
 public class HPController : MonoBehaviour
 {
-    CharacterController _chara;
-    private void Awake()
+    private void Update()
     {
-        _chara = GetComponent<CharacterController>();
+        if(CharacterController. == false)
     }
 }
