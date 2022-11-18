@@ -74,6 +74,7 @@ public class InteractController : MonoBehaviour
     }
     private void Update()
     {
+        if (PlotController.PlotLock) return;
         if (Active != this) return;
         if (Input.GetKeyUp(KeyCode.F))
         {

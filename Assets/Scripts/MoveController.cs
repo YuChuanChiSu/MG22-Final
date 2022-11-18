@@ -21,27 +21,30 @@ public class MoveController : MonoBehaviour
         Camera.main.transform.localEulerAngles += (rotation - Camera.main.transform.localEulerAngles) / 30;
         _rigidbody.gravityScale = 10 * (_chara.isHandstand ? -1.0f : 1.0f);
         Vector2 v = _rigidbody.velocity;
-        if (Input.GetKey(KeyCode.D))
+        if (!PlotController.PlotLock)
         {
-            _chara.spriteRenderer.flipX = true;
-            v.x = _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            _chara.spriteRenderer.flipX = false;
-            v.x = (-1) * _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
-        }
-        else
-        {
-            v.x = 0;
-        }
-        if (Input.GetKey(KeyCode.Space) && (_chara.State == CharacterModel.CharacterState.Still || _chara.State == CharacterModel.CharacterState.Walk))
-        {
-            v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
-        }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            _chara.isHandstand = !_chara.isHandstand;
+            if (Input.GetKey(KeyCode.D))
+            {
+                _chara.spriteRenderer.flipX = !_chara.isHandstand;
+                v.x = _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                _chara.spriteRenderer.flipX = _chara.isHandstand;
+                v.x = (-1) * _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
+            }
+            else
+            {
+                v.x = 0;
+            }
+            if (Input.GetKey(KeyCode.Space) && (_chara.State == CharacterModel.CharacterState.Still || _chara.State == CharacterModel.CharacterState.Walk))
+            {
+                v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
+            }
+            if (Input.GetKeyUp(KeyCode.Z))
+            {
+                _chara.isHandstand = !_chara.isHandstand;
+            }
         }
         _rigidbody.velocity = v;
         if (v.y == 0 && _chara.State == CharacterModel.CharacterState.Jump)
