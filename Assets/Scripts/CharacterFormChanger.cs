@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterFormChanger : MonoBehaviour
 {
     CharacterController _chara;
-    public CharacterFormChanger(CharacterController chara)
+    private void Awake()
     {
-        _chara = chara;
+        _chara = GetComponent<CharacterController>();
     }
 }

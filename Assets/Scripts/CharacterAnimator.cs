@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterAnimator : MonoBehaviour
 {
     CharacterController _chara;
-    public CharacterAnimator(CharacterController chara)
+    private void Awake()
     {
-        _chara = chara;
+        _chara = GetComponent<CharacterController>();
     }
 }

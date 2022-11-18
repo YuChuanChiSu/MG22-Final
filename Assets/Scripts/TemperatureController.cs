@@ -6,8 +6,8 @@ using UnityEngine;
 public class TemperatureController : MonoBehaviour
 {
     CharacterController _chara;
-    public TemperatureController(CharacterController chara)
+    private void Awake()
     {
-        _chara = chara;
+        _chara = GetComponent<CharacterController>();
     }
 }

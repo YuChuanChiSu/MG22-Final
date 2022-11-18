@@ -11,6 +11,7 @@ public class CharacterController : MonoBehaviour
     public CharacterState State = CharacterState.Still;
     public Temperature Temperature = Temperature.Standard;
     public bool isHandstand = false;
+    public float MoveSpeed = 1;
     public long HP = 100;
 
     [HideInInspector]

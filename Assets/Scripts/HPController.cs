@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine;
 public class HPController : MonoBehaviour
 {
     CharacterController _chara;
-    public HPController(CharacterController chara)
+    private void Awake()
     {
-        _chara = chara;
+        _chara = GetComponent<CharacterController>();
     }
 }
