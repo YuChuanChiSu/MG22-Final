@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using static CharacterModel;
 
-public class CharacterFormChanger : ObservableMonoBehavior
+public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
 {
     CharacterController _chara;
 
