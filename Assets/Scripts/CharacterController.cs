@@ -2,27 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using static CharacterModel;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
+    /// <summary>
+    /// 当前人物实例
+    /// </summary>
     public static CharacterController Instance { get; private set; }
 
-    public Animator animator;
     public CharacterForm Form = CharacterForm.Water;
+    /// <summary>
+    /// 人物状态
+    /// </summary>
     public CharacterState State = CharacterState.Still;
+    /// <summary>
+    /// 温度
+    /// </summary>
     public Temperature Temperature = Temperature.Standard;
+    /// <summary>
+    /// 是否处于倒立状态
+    /// </summary>
     public bool isHandstand = false;
-    public float MoveSpeed = 5, JumpDegree = 25;   
+    public float MoveSpeed = 5, JumpDegree = 25;
     public long HP = 100;
-    public bool isHurt;
-    public GameObject Hp0;
-    public GameObject Hp20;
-    public GameObject Hp40;
-    public GameObject Hp60;
-    public GameObject Hp80;
-    public GameObject Hp100;
 
 
     [HideInInspector]
@@ -100,5 +102,10 @@ public class CharacterController : MonoBehaviour
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Dispose();
     }
 }
