@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using static CharacterModel;
 using UnityEngine;
+using GenericToolKit.Mvvm;
 /// <summary>
 /// 人物控制器
 /// </summary>
-public class CharacterController : MonoBehaviour
+public class CharacterController : ObservableMonoBehavior
 {
     /// <summary>
     /// 当前人物实例
@@ -35,7 +36,14 @@ public class CharacterController : MonoBehaviour
     /// <summary>
     /// 血量
     /// </summary>
-    public long HP = 100;
+    [Tooltip("血量")]
+    [SerializeField]
+    private long _hp = 100;
+    public long HP
+    {
+        get => _hp;
+        set => SetProperty(ref _hp, value);
+    }
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
@@ -58,5 +66,10 @@ public class CharacterController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Dispose();
     }
 }
