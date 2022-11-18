@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using static CharacterModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using GenericToolKit.Mvvm;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController : ObservableMonoBehavior
 {
     /// <summary>
     /// 当前人物实例
     /// </summary>
     public static CharacterController Instance { get; private set; }
 
+    public Animator animator;
     public CharacterForm Form = CharacterForm.Water;
     /// <summary>
     /// 人物状态
@@ -24,7 +28,24 @@ public class CharacterController : MonoBehaviour
     /// </summary>
     public bool isHandstand = false;
     public float MoveSpeed = 5, JumpDegree = 25;
-    public long HP = 100;
+    /// <summary>
+    /// 血量
+    /// </summary>
+    [Tooltip("血量")]
+    [SerializeField]
+    private long _hp = 80;
+    public long HP
+    {
+        get => _hp;
+        set => SetProperty(ref _hp, value);
+    }
+    public bool isHurt;
+    public GameObject Hp0;
+    public GameObject Hp20;
+    public GameObject Hp40;
+    public GameObject Hp60;
+    public GameObject Hp80;
+    public GameObject Hp100;
 
 
     [HideInInspector]
