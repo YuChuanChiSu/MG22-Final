@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 交互控制器
+/// </summary>
 public class InteractController : MonoBehaviour
 {
     private static GameObject _ftipPrefab;
@@ -14,18 +16,31 @@ public class InteractController : MonoBehaviour
             return _ftipPrefab;
         }
     }
+    /// <summary>
+    /// 焦点交互物件
+    /// </summary>
     public static InteractController Active { get; private set; }
 
     [HideInInspector]
     public GameObject FTipInstance;
+    /// <summary>
+    /// 交互器
+    /// </summary>
     [HideInInspector]
     public InteractBase Interactor;
+    /// <summary>
+    /// 是否已交互
+    /// </summary>
     [HideInInspector]
     public bool Interacted = false;
     private void Awake()
     {
         Interactor = GetComponent<InteractBase>();
     }
+    /// <summary>
+    /// 基础是否可交互
+    /// </summary>
+    /// <returns></returns>
     public bool CanActive()
     {
         return !Interacted && Interactor.CanActive();
@@ -47,6 +62,9 @@ public class InteractController : MonoBehaviour
             LostFocus();
         }
     }
+    /// <summary>
+    /// 失去交互焦点
+    /// </summary>
     public void LostFocus()
     {
         FTipInstance.GetComponent<Animator>().SetFloat("Speed", -2.0f);
