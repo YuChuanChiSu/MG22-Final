@@ -16,7 +16,7 @@ public class CharacterModel
     }
     public enum CharacterState
     {
-        Still, Walk, Jump, Floating
+        Still, Walk, Jump
     }
 }
 
