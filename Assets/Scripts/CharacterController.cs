@@ -38,7 +38,7 @@ public class CharacterController : ObservableMonoBehavior
     /// </summary>
     [Tooltip("ÑªÁ¿")]
     [SerializeField]
-    private long _hp = 100;
+    private long _hp = 80;
     public long HP
     {
         get => _hp;
