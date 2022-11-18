@@ -4,7 +4,7 @@ using static CharacterModel;
 using UnityEngine;
 
 /// <summary>
-/// ÎÂ¶È¿ØÖÆÆ÷
+/// ï¿½Â¶È¿ï¿½ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 public class TemperatureController : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class TemperatureController : MonoBehaviour
 
 
     /// <summary>
-    /// ÎÂ¶ÈÉÏÉý
+    /// ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public void Up()
     {
@@ -37,23 +37,28 @@ public class TemperatureController : MonoBehaviour
             switch (_chara.Temperature)
             {
                 case Temperature.Zero:
-                    transform.GetChild(0).gameObject.SetActive(false);
-                    transform.GetChild(1).gameObject.SetActive(true);
-                    _chara.Temperature = Temperature.Standard;
+                    if (CharacterFormLock.isLocked(CharacterForm.Water) == false)
+                    {
+                        transform.GetChild(0).gameObject.SetActive(false);
+                        transform.GetChild(1).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Standard;
+                    }
                     break;
 
                 case Temperature.Standard:
-                    transform.GetChild(1).gameObject.SetActive(false);
-                    transform.GetChild(2).gameObject.SetActive(true);
-                    _chara.Temperature = Temperature.Boil;
+                    if (CharacterFormLock.isLocked(CharacterForm.Mist) == false)
+                    {
+                        transform.GetChild(1).gameObject.SetActive(false);
+                        transform.GetChild(2).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Boil;
+                    }
                     break;
             }
-            //temperatureText.text = ("ÎÂ¶È£º" + TemperatureData.temperatureValue);
         }
     }
 
     /// <summary>
-    /// ÎÂ¶ÈÏÂ½µ
+    /// ï¿½Â¶ï¿½ï¿½Â½ï¿½
     /// </summary>
     public void Down()
     {
@@ -62,18 +67,24 @@ public class TemperatureController : MonoBehaviour
             switch (_chara.Temperature)
             {
                 case Temperature.Boil:
-                    transform.GetChild(2).gameObject.SetActive(false);
-                    transform.GetChild(1).gameObject.SetActive(true);
-                    _chara.Temperature = Temperature.Standard;
+                    if (CharacterFormLock.isLocked(CharacterForm.Water) == false)
+                    {
+                        transform.GetChild(2).gameObject.SetActive(false);
+                        transform.GetChild(1).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Standard;
+                    }
                     break;
 
                 case Temperature.Standard:
-                    transform.GetChild(1).gameObject.SetActive(false);
-                    transform.GetChild(0).gameObject.SetActive(true);
-                    _chara.Temperature = Temperature.Zero;
+                    if (CharacterFormLock.isLocked(CharacterForm.Ice) == false)
+                    {
+                        transform.GetChild(1).gameObject.SetActive(false);
+                        transform.GetChild(0).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Zero;
+                    }
                     break;
             }
-            //temperatureText.text = ("ÎÂ¶È£º" + TemperatureData.temperatureValue);
+
         }
     }
 }
