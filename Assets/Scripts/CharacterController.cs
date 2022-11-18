@@ -4,38 +4,23 @@ using static CharacterModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-<<<<<<< HEAD
-
-public class CharacterController : MonoBehaviour
-
 using GenericToolKit.Mvvm;
+
 /// <summary>
 /// 人物控制器
 /// </summary>
 public class CharacterController : ObservableMonoBehavior
-
-=======
-using GenericToolKit.Mvvm;
-
-public class CharacterController : ObservableMonoBehavior
->>>>>>> 091ed4690ff97930f8d58d9e204c4c347250c9fb
 {
     /// <summary>
     /// 当前人物实例
     /// </summary>
     public static CharacterController Instance { get; private set; }
 
-<<<<<<< HEAD
-
     public Animator animator;
 
     /// <summary>
     /// 人物形态
     /// </summary>
-
-=======
-    public Animator animator;
->>>>>>> 091ed4690ff97930f8d58d9e204c4c347250c9fb
     public CharacterForm Form = CharacterForm.Water;
     /// <summary>
     /// 人物状态
@@ -49,26 +34,12 @@ public class CharacterController : ObservableMonoBehavior
     /// 是否处于倒立状态
     /// </summary>
     public bool isHandstand = false;
-<<<<<<< HEAD
-
-    public float MoveSpeed = 5, JumpDegree = 25;   
-    public long HP = 100;
-    public bool isHurt;
-    public GameObject Hp0;
-    public GameObject Hp20;
-    public GameObject Hp40;
-    public GameObject Hp60;
-    public GameObject Hp80;
-    public GameObject Hp100;
-
 
     [Tooltip("移动速度")]
     public float MoveSpeed = 5;
     [Tooltip("跳跃幅度")]
     public float JumpDegree = 25;
-=======
-    public float MoveSpeed = 5, JumpDegree = 25;
->>>>>>> 091ed4690ff97930f8d58d9e204c4c347250c9fb
+
     /// <summary>
     /// 血量
     /// </summary>
@@ -80,8 +51,7 @@ public class CharacterController : ObservableMonoBehavior
         get => _hp;
         set => SetProperty(ref _hp, value);
     }
-<<<<<<< HEAD
-=======
+
     public bool isHurt;
     public GameObject Hp0;
     public GameObject Hp20;
@@ -89,8 +59,6 @@ public class CharacterController : ObservableMonoBehavior
     public GameObject Hp60;
     public GameObject Hp80;
     public GameObject Hp100;
->>>>>>> 091ed4690ff97930f8d58d9e204c4c347250c9fb
-
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
@@ -100,21 +68,16 @@ public class CharacterController : ObservableMonoBehavior
     public CharacterFormChanger characterFormChanger;
     [HideInInspector]
     public MoveController moveController;
-    [HideInInspector]
-    public HPController hpController;
 
     private void Awake()
     {
         characterAnimator = gameObject.AddComponent<CharacterAnimator>();
         characterFormChanger = gameObject.AddComponent<CharacterFormChanger>();
         moveController = gameObject.AddComponent<MoveController>();
-        hpController = gameObject.AddComponent<HPController>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         
-
         Instance = this;
-
     }
     private void Update()
     {
