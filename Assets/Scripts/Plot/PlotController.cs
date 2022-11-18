@@ -39,7 +39,7 @@ public class PlotController : InteractBase
     {
         PlotLock = true;
         Active = this;
-        PlotUnit unit = plotSelector.Select();
+        PlotUnit unit = Plots.First(x => x.PlotTag == plotSelector.Select());
         ExecuteCode(unit.PlotCode);
         return !unit.ReInteractable;
     }
@@ -65,17 +65,18 @@ public class PlotController : InteractBase
             }
             else if (p[0] == "choice")
             {
-                float y = DialogController.Instance.ChoicePrefab.transform.position.y;
+                float y = DialogController.Instance.ChoicePrefab.transform.localPosition.y,
+                      h = DialogController.Instance.ChoicePrefab.GetComponent<RectTransform>().sizeDelta.y;
                 for(int j = 1;j < p.Length; j+= 2)
                 {
                     GameObject go = Instantiate(DialogController.Instance.ChoicePrefab, DialogController.Instance.transform);
-                    Vector3 pos = go.transform.position;
+                    Vector3 pos = go.transform.localPosition;
                     pos.y = y;
-                    go.transform.position = pos;
+                    go.transform.localPosition = pos;
                     go.transform.Find("Title").GetComponent<Text>().text = p[j];
                     go.GetComponent<ChoiceController>().PlotTag = p[j + 1];
                     go.SetActive(true);
-                    y += DialogController.Instance.ChoicePrefab.transform.localScale.y;
+                    y += (h + 50);
                 }
                 return;
             }
@@ -112,7 +113,7 @@ public class PlotEvent : MonoBehaviour
 
 public class PlotSelector : MonoBehaviour
 {
-    public virtual PlotUnit Select()
+    public virtual string Select()
     {
         throw new NotImplementedException();
     }

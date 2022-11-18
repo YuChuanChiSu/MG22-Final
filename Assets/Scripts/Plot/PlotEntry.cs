@@ -7,9 +7,8 @@ using UnityEngine;
 /// </summary>
 public class PlotEntry : PlotSelector
 {
-    public PlotUnit Entry;
-    public override PlotUnit Select()
+    public override string Select()
     {
-        return Entry;
+        return "Entry";
     }
 }
