@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 1823098556}
   - component: {fileID: 1823098559}
   - component: {fileID: 1823098558}
+  - component: {fileID: 1823098560}
   m_Layer: 0
   m_Name: "\u4EBA\u7269"
   m_TagString: Untagged
@@ -673,6 +674,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4987862, y: 6.208398}
   m_EdgeRadius: 0
+--- !u!114 &1823098560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823098555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c878d591634c212409c7b7bd6e23c640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Form: 1
+  State: 0
+  Temperature: 25
+  isHandstand: 0
+  HP: 100
+  spriteRenderer: {fileID: 0}
+  characterAnimator: {fileID: 0}
+  characterFormChanger: {fileID: 0}
+  moveController: {fileID: 0}
+  hpController: {fileID: 0}
 --- !u!1 &1988325384
 GameObject:
   m_ObjectHideFlags: 0
