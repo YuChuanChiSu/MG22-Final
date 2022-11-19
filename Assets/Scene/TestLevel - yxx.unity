@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43880075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4006352, y: -2.8178802, z: -10}
+  m_LocalPosition: {x: -2.40064, y: -2.8157077, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   isHandstand: 0
   MoveSpeed: 5
   JumpDegree: 25
-  HP: 100
+  _hp: 80
   isHurt: 0
   Hp0: {fileID: 1052388676}
   Hp20: {fileID: 409374628}
@@ -1530,7 +1530,6 @@ MonoBehaviour:
   characterAnimator: {fileID: 0}
   characterFormChanger: {fileID: 0}
   moveController: {fileID: 0}
-  hpController: {fileID: 0}
 --- !u!95 &1823098561
 Animator:
   serializedVersion: 4
