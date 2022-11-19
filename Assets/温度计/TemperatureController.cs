@@ -19,6 +19,7 @@ public class TemperatureController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Up();
+          
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -42,6 +43,12 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(0).gameObject.SetActive(false);
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
+                    }
+                    else if (CharacterFormLock.isLocked(CharacterForm.Mist) == false)
+                    {
+                        transform.GetChild(1).gameObject.SetActive(false);
+                        transform.GetChild(2).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Boil;
                     }
                     break;
 
@@ -73,6 +80,12 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
                     }
+                    else if (CharacterFormLock.isLocked(CharacterForm.Ice) == false)
+                    {
+                        transform.GetChild(1).gameObject.SetActive(false);
+                        transform.GetChild(0).gameObject.SetActive(true);
+                        _chara.Temperature = Temperature.Zero;
+                    }
                     break;
 
                 case Temperature.Standard:
@@ -84,7 +97,6 @@ public class TemperatureController : MonoBehaviour
                     }
                     break;
             }
-
         }
     }
 }
