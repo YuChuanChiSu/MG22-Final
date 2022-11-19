@@ -12,22 +12,16 @@ public class SavePoint : InteractBase
     /// <summary>
     /// 逻辑代码全在ViewModel里
     /// </summary>
-    private SavePointViewModel _savePoint { get; set; }
+    private SavePointViewModel _savePoint 
+        => ServiceLocator.Instance?.SavePoint;
 
     /// <summary>
     /// 触碰到检查点后可能会有一些动画效果等等，留一个回调
     /// </summary>
-    public static event UnityAction<SavePoint> OnSavePointTriggered;
-    
-    /// <summary>
-    /// 由外部提供移动暂停方法
-    /// </summary>
-    public UnityAction MovePause { get; set; }
-
-    /// <summary>
-    /// 由外部提供移动恢复方法
-    /// </summary>
-    public UnityAction MoveRestart { get; set; }
+    public static event UnityAction<SavePoint> OnSavePointTriggered = (e) =>
+    {
+        Instantiate(Resources.Load<GameObject>("Prefabs\\CheckpointUnlockAni")).SetActive(true);
+    };
 
     /// <summary>
     /// 是否为出生点（关卡初始位置，还未触发任何检查点时）
@@ -36,9 +30,6 @@ public class SavePoint : InteractBase
 
     private void Start()
     {
-        _savePoint = ServiceLocator.Instance.SavePoint;
-        _savePoint.MovePause = MovePause;
-        _savePoint.MoveRestart = MoveRestart;
         if (isBornPoint)
         {
             Interact();
@@ -52,5 +43,4 @@ public class SavePoint : InteractBase
         OnSavePointTriggered?.Invoke(this);
         return true;
     }
-
 }

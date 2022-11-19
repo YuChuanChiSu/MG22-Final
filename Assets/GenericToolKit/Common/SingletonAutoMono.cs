@@ -11,11 +11,15 @@ namespace GenericToolKit.Common
     public class SingletonAutoMono<TMonoBehavior> : MonoBehaviour where TMonoBehavior : MonoBehaviour
     {
         private static TMonoBehavior? _instance = null;
-        
-        public static TMonoBehavior Instance
+        private static bool _isDispose = false;
+
+        public static TMonoBehavior? Instance
         {
             get
             {
+                if (_isDispose)
+                    return null;
+
                 if (_instance == null)
                 {
                     GameObject token = new GameObject(typeof(TMonoBehavior).Name);
@@ -25,6 +29,11 @@ namespace GenericToolKit.Common
 
                 return _instance;
             }
+        }
+
+        protected virtual void OnDestroy()
+        {
+            _isDispose = true;
         }
     }
 }

@@ -28,9 +28,6 @@ public class SavePointViewModel : ObservableObject
     /// </summary>
     public long RecentHP { get; set; }
 
-    public UnityAction MovePause { get; set; }
-    public UnityAction MoveRestart { get; set; }
-
     private const int _timeControl = 50;
     private const float _adder = 0.02f; 
     private Text _hpEmptyText;
@@ -40,8 +37,8 @@ public class SavePointViewModel : ObservableObject
     {
         CharacterController.Instance.PropertyChanged += OnHPChanged;
         _dispatcher = dispatcher;
-        _hpEmptyText = ServiceLocator.Instance.HidePanel.GetHPEmptyText();
-        _hidePanel = ServiceLocator.Instance.HidePanel.GetPanelImage();
+        _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
+        _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
     }
 
     /// <summary>
@@ -66,7 +63,7 @@ public class SavePointViewModel : ObservableObject
     /// <returns></returns>
     private IEnumerator ResetCorotine()
     {
-        MovePause?.Invoke();
+        PlotController.PlotLock = true;
 
         for (int i = 0; i < _timeControl; i++)
         {
@@ -94,7 +91,7 @@ public class SavePointViewModel : ObservableObject
             yield return new WaitForSeconds(0.01f);
         }
 
-        MoveRestart?.Invoke();
+        PlotController.PlotLock = false;
     }
 
     public override void Dispose()
