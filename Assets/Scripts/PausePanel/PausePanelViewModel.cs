@@ -37,7 +37,7 @@ public class PausePanelViewModel : ObservablePanel
     public void SetActive()
         => SetCompoent(true);
 
-    private void OnButtonClick(string buttonName)
+    public void OnButtonClick(string buttonName)
     {
         switch (buttonName)
         {
@@ -62,4 +62,5 @@ public class PausePanelViewModel : ObservablePanel
         GetCompoent<Button>("PauseButton").gameObject.SetActive(active);
         GetCompoent<Image>("PauseContainImage").gameObject.SetActive(!active);
     }
+
 }

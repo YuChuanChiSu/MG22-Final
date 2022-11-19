@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using static CharacterModel;
 using UnityEngine;
 
-/// <summary>
-/// ���Źؿ��ƽ���������̬�𲽽�������ζ��ĳЩ��̬�������ǿ��ܵģ�
-/// </summary>
 public class CharacterFormLock
 {
-    private static bool[] locks;
+    private static Dictionary<CharacterForm, bool> locks;
     static CharacterFormLock()
     {
-        locks = new bool[] { true, false, true };
+        locks = new Dictionary<CharacterForm, bool>();
+        locks.Add(CharacterForm.Ice, true);
+        locks.Add(CharacterForm.Water, false);
+        locks.Add(CharacterForm.Mist, true);
     }
     /// <summary>
-    /// �ж�ָ����̬�Ƿ񻹲���ʹ��
+    /// 是否还未解锁某种形态
     /// </summary>
     /// <param name="form"></param>
     /// <returns></returns>
     public static bool isLocked(CharacterForm form)
     {
-        return locks[(int)form];
+        return locks[form];
     }
     /// <summary>
-    /// ����ָ��״̬
+    /// 解锁某种形态
     /// </summary>
     /// <param name="form"></param>
     public static void UnLock(CharacterForm form)
     {
-        locks[(int)form] = false;
+        locks[form] = false;
     }
 }

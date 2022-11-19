@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class MoveController : MonoBehaviour
 {
-    public const int MaxJumpCount = 2;
+    public const int MaxJumpCount = 1;
     public static int JumpCount = 0;
     public Rigidbody2D _rigidbody;
     Transform _camera;
@@ -65,17 +65,15 @@ public class MoveController : MonoBehaviour
             {
                 v.x = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount && falling)
+            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount && falling && _chara.Form != CharacterModel.CharacterForm.Water)
             {
                 v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
                 JumpCount++;
                 //Debug.Log(JumpCount + "¶ÎÌø£¡");
             }
-            if (Input.GetKeyUp(KeyCode.Z))
-            {
-                _chara.isHandstand = !_chara.isHandstand;
-            }
+
         }
+        _chara.isHandstand = _chara.Form == CharacterModel.CharacterForm.Mist;
         _rigidbody.velocity = v;
     }
 }

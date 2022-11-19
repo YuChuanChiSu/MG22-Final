@@ -43,12 +43,14 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(0).gameObject.SetActive(false);
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
+                        _chara.characterFormChanger.Form = CharacterForm.Water;
                     }
                     else if (CharacterFormLock.isLocked(CharacterForm.Mist) == false)
                     {
                         transform.GetChild(1).gameObject.SetActive(false);
                         transform.GetChild(2).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Boil;
+                        _chara.characterFormChanger.Form = CharacterForm.Mist;
                     }
                     break;
 
@@ -58,6 +60,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(1).gameObject.SetActive(false);
                         transform.GetChild(2).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Boil;
+                        _chara.characterFormChanger.Form = CharacterForm.Mist;
                     }
                     break;
             }
@@ -79,12 +82,14 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(2).gameObject.SetActive(false);
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
+                        _chara.characterFormChanger.Form = CharacterForm.Water;
                     }
                     else if (CharacterFormLock.isLocked(CharacterForm.Ice) == false)
                     {
                         transform.GetChild(1).gameObject.SetActive(false);
                         transform.GetChild(0).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Zero;
+                        _chara.characterFormChanger.Form = CharacterForm.Ice;
                     }
                     break;
 
@@ -94,6 +99,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(1).gameObject.SetActive(false);
                         transform.GetChild(0).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Zero;
+                        _chara.characterFormChanger.Form = CharacterForm.Ice;
                     }
                     break;
             }

@@ -18,4 +18,15 @@ public class PausePanel : ObservablePanelMono<PausePanelViewModel>
         base.Awake();
         Panel.SetActive();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+            Panel.OnButtonClick("PauseButton");
+    }
+
+    public void OnClick(string btnName)
+    {
+        Panel.OnButtonClick(btnName);
+    }
 }
