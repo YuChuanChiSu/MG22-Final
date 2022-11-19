@@ -29,18 +29,28 @@ public class SavePoint : InteractBase
     /// </summary>
     public UnityAction MoveRestart { get; set; }
 
+    /// <summary>
+    /// 是否为出生点（关卡初始位置，还未触发任何检查点时）
+    /// </summary>
+    public bool isBornPoint = false;
+
     private void Start()
     {
         _savePoint = ServiceLocator.Instance.SavePoint;
         _savePoint.MovePause = MovePause;
         _savePoint.MoveRestart = MoveRestart;
+        if (isBornPoint)
+        {
+            Interact();
+        }
     }
 
     public override bool Interact()
     {
         _savePoint.RecentSavePosition = CharacterController.Instance.GetComponent<Transform>().position;
-        _savePoint.RecentHP = CharacterController.Instance.HP;
+        _savePoint.RecentHP = 40; // 固定恢复到40，忘了说明了qwq CharacterController.Instance.HP;
         OnSavePointTriggered?.Invoke(this);
         return true;
     }
+
 }

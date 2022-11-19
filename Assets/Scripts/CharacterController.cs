@@ -110,7 +110,7 @@ public class CharacterController : ObservableMonoBehavior
         {
             Hp20.SetActive(false);
             Hp0.SetActive(true);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
@@ -127,8 +127,8 @@ public class CharacterController : ObservableMonoBehavior
     {
         if(collision.tag == "Ddl")
         {
-            
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            HP = 0;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
