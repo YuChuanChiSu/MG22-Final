@@ -7,6 +7,8 @@ TagManager:
   - Ddl
   - Foot
   - Head
+  - Hurt
+  - Map
   layers:
   - Default
   - TransparentFX

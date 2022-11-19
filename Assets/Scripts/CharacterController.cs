@@ -17,6 +17,9 @@ public class CharacterController : ObservableMonoBehavior
     public static CharacterController Instance { get; private set; }
 
     public Animator animator;
+    public Rigidbody2D rb;
+    public LayerMask layerMask;
+    public Collider2D collider;
 
     /// <summary>
     /// ������̬
@@ -59,6 +62,8 @@ public class CharacterController : ObservableMonoBehavior
     public GameObject Hp60;
     public GameObject Hp80;
     public GameObject Hp100;
+    public float y_max;
+
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
@@ -81,7 +86,11 @@ public class CharacterController : ObservableMonoBehavior
     }
     private void Update()
     {
-        Movement();
+        if (!isHurt)
+        {
+            Movement();
+        }
+        
 
         if (HP == 100)
         {
@@ -118,22 +127,91 @@ public class CharacterController : ObservableMonoBehavior
     {
         float horizontalmove = Input.GetAxis("Horizontal");
         float facemove = Input.GetAxisRaw("Horizontal");
-        if(horizontalmove != 0)
+        float ymove = Input.GetAxisRaw("Vertical");
+        if(Form == CharacterForm.Water)
         {
-            animator.SetFloat("walking", Mathf.Abs(facemove));
+            animator.SetBool("water", true);
+            if (!isHurt)
+            {
+                if (horizontalmove != 0)
+                {
+                    animator.SetBool("idle_water",false);
+                    animator.SetFloat("walking", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_water", false);
+                }
+
+                if (State == CharacterState.Jump)
+                {
+                    animator.SetBool("idle_water", false);
+                    animator.SetBool("jumping_water", true);
+                    animator.SetFloat("walking", 0);
+
+                }
+                if (horizontalmove == 0)
+                {
+                    animator.SetBool("idle_water", true);
+                    animator.SetFloat("walking", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_water", false);
+                }
+
+            }
+
         }
+        if (Form == CharacterForm.Ice)
+        {
+            animator.SetBool("ice",true);
+            if (!isHurt)
+            {
+                if (horizontalmove != 0)
+                {
+                    animator.SetBool("idle_ice", false);
+                    animator.SetFloat("walking_ice", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_ice", false);
+                }
+
+                if (State == CharacterState.Jump)
+                {
+                    animator.SetBool("idle_ice", false);
+                    animator.SetBool("jumping_ice", true);
+                    animator.SetFloat("walking_ice", 0);
+
+                }
+                if (horizontalmove == 0)
+                {
+                    animator.SetBool("idle_ice", true);
+                    animator.SetFloat("walking_ice", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_ice", false);
+                }
+            }
+
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
+
     {
+        Vector2 p = transform.position;
+        y_max = rb.velocity.y;
         if(collision.tag == "Ddl")
         {
             HP = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if(collision.tag == "Hurt")
+        {
+            HP -= 20;
+        }
+        if(Form == CharacterForm.Ice && collision.tag == "Map"&& rb.velocity.y<-18)
+        {
+            HP = 0;
+        }
+
     }
 
     private void OnDestroy()
     {
         Dispose();
     }
+
+    
 }

@@ -48,12 +48,12 @@ public class MoveController : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.D))
                 {
-                    _chara.spriteRenderer.flipX = !_chara.isHandstand;
+                    _chara.spriteRenderer.flipX = _chara.isHandstand;
                     v.x = _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
                 }
                 else if (Input.GetKey(KeyCode.A))
                 {
-                    _chara.spriteRenderer.flipX = _chara.isHandstand;
+                    _chara.spriteRenderer.flipX = !_chara.isHandstand;
                     v.x = (-1) * _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
                 }
                 else
