@@ -10,7 +10,7 @@ namespace GenericToolKit.Mvvm.UI
 {
     public abstract class ObservablePanelMono<TObservablePanel> : MonoBehaviour where TObservablePanel : ObservablePanel
     {
-        public abstract TObservablePanel Panel { get; set; }
+        public abstract TObservablePanel Panel { get; }
 
         protected virtual void Awake()
         {
@@ -19,7 +19,7 @@ namespace GenericToolKit.Mvvm.UI
         
         protected virtual void OnDestroy()
         {
-            Panel.Dispose();
+            Panel?.Dispose();
         }
     }
 }

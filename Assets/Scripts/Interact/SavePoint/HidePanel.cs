@@ -7,11 +7,11 @@ using GenericToolKit.Mvvm.UI;
 
 public class HidePanel : ObservablePanelMono<HidePanelViewModel>
 {
-    public override HidePanelViewModel Panel { get; set; }
+    public override HidePanelViewModel Panel
+        => ServiceLocator.Instance?.HidePanel;
 
     protected override void Awake()
     {
-        Panel = ServiceLocator.Instance.HidePanel;
         base.Awake();
     }
 

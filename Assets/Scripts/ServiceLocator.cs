@@ -18,6 +18,9 @@ public class ServiceLocator : SingletonAutoMono<ServiceLocator>
     public HidePanelViewModel HidePanel
         => IocContainer.Instance.GetRequiredService<HidePanelViewModel>();
 
+    public PausePanelViewModel PausePanel
+        => IocContainer.Instance.GetRequiredService<PausePanelViewModel>();
+
     private void Awake()
     {
         IServiceRegister register = IocContainer.BuildDefalutRegister();
@@ -26,12 +29,15 @@ public class ServiceLocator : SingletonAutoMono<ServiceLocator>
             => new SavePointViewModel((ISyncDispatcher)provider.GetService(typeof(ISyncDispatcher))), true);
         register.TryRegisterSingleton<HidePanelViewModel>((IServiceProvider provider)
             => new HidePanelViewModel(), true);
+        register.TryRegisterSingleton<PausePanelViewModel>((IServiceProvider provider)
+            => new PausePanelViewModel(), true);
 
         IocContainer.ConfigureDefalutService(register);
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         IocContainer.Instance.Dispose();
     }
 }
