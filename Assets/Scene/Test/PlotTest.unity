@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbc02a0b71774d4780ade62f787cecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entry: {fileID: 423507372}
 --- !u!114 &423507375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,18 +1077,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c878d591634c212409c7b7bd6e23c640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   Form: 1
   State: 0
   Temperature: 25
   isHandstand: 0
   MoveSpeed: 5
   JumpDegree: 25
-  HP: 100
+  _hp: 80
+  isHurt: 0
+  Hp0: {fileID: 0}
+  Hp20: {fileID: 0}
+  Hp40: {fileID: 0}
+  Hp60: {fileID: 0}
+  Hp80: {fileID: 0}
+  Hp100: {fileID: 0}
   spriteRenderer: {fileID: 0}
   characterAnimator: {fileID: 0}
   characterFormChanger: {fileID: 0}
   moveController: {fileID: 0}
-  hpController: {fileID: 0}
 --- !u!50 &2060485193
 Rigidbody2D:
   serializedVersion: 4
@@ -1204,7 +1210,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &9149224051845998725
+--- !u!1001 &6761390368929989822
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1297,7 +1303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770176561415550862, guid: ee4b29b2c3211184bbc42e15b1479a7a, type: 3}
       propertyPath: m_Name
-      value: HPCanvas
+      value: TemperatureCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7080142914078037686, guid: ee4b29b2c3211184bbc42e15b1479a7a, type: 3}
       propertyPath: m_Camera
