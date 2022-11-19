@@ -18,7 +18,10 @@ public class SavePoint : InteractBase
     /// <summary>
     /// 触碰到检查点后可能会有一些动画效果等等，留一个回调
     /// </summary>
-    public static event UnityAction<SavePoint> OnSavePointTriggered;
+    public static event UnityAction<SavePoint> OnSavePointTriggered = (e) =>
+    {
+        Instantiate(Resources.Load<GameObject>("Prefabs\\CheckpointUnlockAni")).SetActive(true);
+    };
 
     /// <summary>
     /// 是否为出生点（关卡初始位置，还未触发任何检查点时）
