@@ -248,6 +248,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd388de4827361f40ba9c1819ef0a71d, type: 3}
+--- !u!70 &737646482 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3976905620499945867, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+  m_PrefabInstance: {fileID: 3976905618923186226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &737646486 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3976905620499945863, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+  m_PrefabInstance: {fileID: 3976905618923186226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804800007
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +273,7 @@ GameObject:
   - component: {fileID: 804800012}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7768,6 +7778,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -15.0362015
       objectReference: {fileID: 0}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 737646486}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 737646482}
     - target: {fileID: 3976905620499945866, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: -52.1
