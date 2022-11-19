@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class TemperatureController : MonoBehaviour
 {
+    public static TemperatureController Instance; 
     CharacterController _chara;
     private void Start()
     {
@@ -99,4 +100,17 @@ public class TemperatureController : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// 人物死亡后，温度重置为25度
+    /// </summary>
+    public  void  TemperatureReset()
+    {
+
+        _chara.Temperature = Temperature.Standard;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(false);
+    }
+
 }
