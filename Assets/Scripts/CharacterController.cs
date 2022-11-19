@@ -15,6 +15,7 @@ public class CharacterController : ObservableMonoBehavior
     /// ��ǰ����ʵ��
     /// </summary>
     public static CharacterController Instance { get; private set; }
+    public static long LastHP = 80;
 
     public Animator animator;
 
@@ -71,6 +72,8 @@ public class CharacterController : ObservableMonoBehavior
 
     private void Awake()
     {
+        HP = LastHP;
+
         characterAnimator = gameObject.AddComponent<CharacterAnimator>();
         characterFormChanger = gameObject.AddComponent<CharacterFormChanger>();
         moveController = gameObject.AddComponent<MoveController>();
@@ -134,6 +137,7 @@ public class CharacterController : ObservableMonoBehavior
 
     private void OnDestroy()
     {
+        LastHP = HP;
         Dispose();
     }
 }

@@ -80,6 +80,7 @@ public class SavePointViewModel : ObservableObject
         // 重置其他状态
         CharacterController.Instance.Form = CharacterModel.CharacterForm.Water;
         CharacterController.Instance.isHandstand = false;
+        TemperatureController.Instance.TemperatureReset();
 
         for (int i = 0; i < _timeControl; i++)
             yield return new WaitForSeconds(0.01f);

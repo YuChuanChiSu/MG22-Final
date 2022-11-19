@@ -80,6 +80,15 @@ public class PlotController : InteractBase
                 }
                 return;
             }
+            else if (p[0] == "star")
+            {
+                LevelPass.Step++;
+                CharacterController.Instance.HP -= 20;
+            }
+            else if (p[0] == "pass")
+            {
+                LevelPass.Step = 100;
+            }
             else if (p[0] == "show")
             {
                 if (DialogController.Instance == null)
@@ -92,11 +101,13 @@ public class PlotController : InteractBase
             }
             else
             {
-                dialogs.Add(new Dialog
+                Dialog dialog = new Dialog
                 {
                     Character = p[0],
                     Content = p[1]
-                });
+                };
+                if (p.Length > 2) dialog.AudioFile = p[2];
+                dialogs.Add(dialog);
             }
         }
         if (DialogController.Instance != null)

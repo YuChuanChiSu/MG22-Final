@@ -51,7 +51,7 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     private CharacterFormEqualityComparer comparer;
 
     /// <summary>
-    /// 伤害
+    /// 伤害 //（策划后来又废弃了...伤害为0）
     /// </summary>
     public static long Damage;
     

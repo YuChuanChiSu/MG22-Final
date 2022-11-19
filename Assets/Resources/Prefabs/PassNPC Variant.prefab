@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7843474375571164217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 209676146629967968, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: PlotTag
+      value: Fail
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967968, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: PlotCode
+      value: "\uFF1F\uFF1F\uFF1F|\u5927\u5730\u4ECD\u7136\u8352\u5BC2\uFF0C\u6211\u4E0D\u5FCD\u79BB\u53BB\u3002\nshow"
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967968, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: ReInteractable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967971, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: PlotTag
+      value: Pass
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967971, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: PlotCode
+      value: pass
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967971, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: ReInteractable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 28.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967972, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209676146629967975, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: plotSelector
+      value: 
+      objectReference: {fileID: 546929154}
+    - target: {fileID: 209676146629967976, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+      propertyPath: m_Name
+      value: PassNPC Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 209676146629967969, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+--- !u!1 &7940256516258188369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 209676146629967976, guid: 19b71c132e3b71f4db1796ae1ac0e3df, type: 3}
+  m_PrefabInstance: {fileID: 7843474375571164217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &546929154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940256516258188369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b03e994453cb14d946f744830ae0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1301361111694956155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940256516258188369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlotTag: Fail
+  PlotCode: "\uFF1F\uFF1F\uFF1F|\u5927\u5730\u4ECD\u7136\u8352\u5BC2\uFF0C\u6211\u4E0D\u5FCD\u79BB\u53BB\u3002\nshow"
+  ReInteractable: 1

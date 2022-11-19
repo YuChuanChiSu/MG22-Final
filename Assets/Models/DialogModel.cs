@@ -10,6 +10,7 @@ public class DialogModel
     {
         public string Character;
         public string Content;
+        public string AudioFile;
     }
 }
 
