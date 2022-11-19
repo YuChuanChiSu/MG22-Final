@@ -4,7 +4,7 @@ using static CharacterModel;
 using UnityEngine;
 
 /// <summary>
-/// 随着关卡推进，部分形态逐步解锁（意味着某些形态不可用是可能的）
+/// 锟斤拷锟脚关匡拷锟狡斤拷锟斤拷锟斤拷锟斤拷锟斤拷态锟金步斤拷锟斤拷锟斤拷锟斤拷味锟斤拷某些锟斤拷态锟斤拷锟斤拷锟斤拷锟角匡拷锟杰的ｏ拷
 /// </summary>
 public class CharacterFormLock
 {
@@ -14,7 +14,7 @@ public class CharacterFormLock
         locks = new bool[] { true, false, true };
     }
     /// <summary>
-    /// 判断指定形态是否还不能使用
+    /// 锟叫讹拷指锟斤拷锟斤拷态锟角否还诧拷锟斤拷使锟斤拷
     /// </summary>
     /// <param name="form"></param>
     /// <returns></returns>
@@ -23,7 +23,7 @@ public class CharacterFormLock
         return locks[(int)form];
     }
     /// <summary>
-    /// 解锁指定状态
+    /// 锟斤拷锟斤拷指锟斤拷状态
     /// </summary>
     /// <param name="form"></param>
     public static void UnLock(CharacterForm form)

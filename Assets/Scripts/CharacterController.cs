@@ -7,43 +7,43 @@ using UnityEngine.UI;
 using GenericToolKit.Mvvm;
 
 /// <summary>
-/// ÈËÎï¿ØÖÆÆ÷
+/// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 public class CharacterController : ObservableMonoBehavior
 {
     /// <summary>
-    /// µ±Ç°ÈËÎïÊµÀý
+    /// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
     /// </summary>
     public static CharacterController Instance { get; private set; }
 
     public Animator animator;
 
     /// <summary>
-    /// ÈËÎïÐÎÌ¬
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬
     /// </summary>
     public CharacterForm Form = CharacterForm.Water;
     /// <summary>
-    /// ÈËÎï×´Ì¬
+    /// ï¿½ï¿½ï¿½ï¿½×´Ì¬
     /// </summary>
     public CharacterState State = CharacterState.Still;
     /// <summary>
-    /// ÎÂ¶È
+    /// ï¿½Â¶ï¿½
     /// </summary>
-    public Temperature Temperature = Temperature.Standard;
+    public  Temperature Temperature = Temperature.Standard;
     /// <summary>
-    /// ÊÇ·ñ´¦ÓÚµ¹Á¢×´Ì¬
+    /// ï¿½Ç·ï¿½ï¿½Úµï¿½ï¿½ï¿½×´Ì¬
     /// </summary>
     public bool isHandstand = false;
 
-    [Tooltip("ÒÆ¶¯ËÙ¶È")]
+    [Tooltip("ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½")]
     public float MoveSpeed = 5;
-    [Tooltip("ÌøÔ¾·ù¶È")]
+    [Tooltip("ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½")]
     public float JumpDegree = 25;
 
     /// <summary>
-    /// ÑªÁ¿
+    /// Ñªï¿½ï¿½
     /// </summary>
-    [Tooltip("ÑªÁ¿")]
+    [Tooltip("Ñªï¿½ï¿½")]
     [SerializeField]
     private long _hp = 80;
     public long HP
