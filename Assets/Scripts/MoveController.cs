@@ -69,7 +69,7 @@ public class MoveController : MonoBehaviour
             {
                 v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
                 JumpCount++;
-                Debug.Log(JumpCount + "¶ÎÌø£¡");
+                //Debug.Log(JumpCount + "¶ÎÌø£¡");
             }
             if (Input.GetKeyUp(KeyCode.Z))
             {

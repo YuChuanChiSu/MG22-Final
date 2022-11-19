@@ -77,6 +77,9 @@ public class SavePointViewModel : ObservableObject
 
         CharacterController.Instance.gameObject.transform.position = RecentSavePosition;
         CharacterController.Instance.HP = RecentHP;
+        // 重置其他状态
+        CharacterController.Instance.Form = CharacterModel.CharacterForm.Water;
+        CharacterController.Instance.isHandstand = false;
 
         for (int i = 0; i < _timeControl; i++)
             yield return new WaitForSeconds(0.01f);
