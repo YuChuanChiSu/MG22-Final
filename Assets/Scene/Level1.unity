@@ -7046,6 +7046,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2175791415324943415, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3976905619504276242, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 6
