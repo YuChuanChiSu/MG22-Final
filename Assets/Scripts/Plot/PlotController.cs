@@ -20,7 +20,7 @@ public class PlotController : InteractBase
     public static PlotController Active = null;
     private static GameObject _dialogPrefab;
 
-    public Func<IEnumerator> NextScene { get; set; }
+    public Func<Action,IEnumerator> NextScene { get; set; }
     public static GameObject DialogPrefab
     {
         get
@@ -81,7 +81,7 @@ public class PlotController : InteractBase
                     go.transform.Find("Title").GetComponent<Text>().text = p[j];
                     go.GetComponent<ChoiceController>().PlotTag = p[j + 1];
                     go.SetActive(true);
-                    y += (h + 50);
+                    y += (h - 50);
                 }
                 return;
             }
@@ -97,7 +97,36 @@ public class PlotController : InteractBase
             }
             else if (p[0] == "pass")
             {
-                StartCoroutine(NextScene());
+                if (DialogController.Instance == null)
+                    Instantiate(DialogPrefab).SetActive(true);
+                StartCoroutine(NextScene(() =>
+                {
+                    ExecuteCode(code, i + 1);
+                }));
+                return;
+            }
+            else if (p[0] == "ending")
+            {
+                EndingPlotSelector end = GetComponent<EndingPlotSelector>();
+                if (DialogController.Instance != null)
+                    DialogController.Instance.Terminate();
+                if (p[1] == "he")
+                {
+                    end.HE.SetActive(true);
+                    end.BE.SetActive(false);
+                    PostcardPanel.instance.PostcardName = "End1";
+                }
+                else
+                {
+                    end.HE.SetActive(false);
+                    end.BE.SetActive(true);
+                    PostcardPanel.instance.PostcardName = "End2";
+                }
+                EndingPass.Callback = () =>
+                {
+                    ExecuteCode(code, i + 1);
+                };
+                return;
             }
             else if (p[0] == "show")
             {

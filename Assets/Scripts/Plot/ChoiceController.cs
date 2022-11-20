@@ -14,7 +14,15 @@ public class ChoiceController : MonoBehaviour
     public void Click()
     {
         Debug.Log("Jump to plot '" + PlotTag + "'");
-        PlotController.Active.ExecutePlot(PlotTag);
+        if (PlotTag == "")
+        {
+            if (DialogController.Instance != null)
+                DialogController.Instance.Terminate();
+        }
+        else
+        {
+            PlotController.Active.ExecutePlot(PlotTag);
+        }
         foreach (GameObject choiceObj in RegisteredChoiceObj)
             choiceObj.GetComponent<ChoiceController>().Hide();
         RegisteredChoiceObj.Clear();

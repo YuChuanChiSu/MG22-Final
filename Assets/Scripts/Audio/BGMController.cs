@@ -11,13 +11,15 @@ public class BGMController : MonoBehaviour
     private AudioSource source;
     private void Awake()
     {
+        transform.parent = transform.root;
         source = GetComponent<AudioSource>();
         source.clip = bgm;
         if (Active != null)
         {
             if (Active.source.clip != bgm)
             {
-                Loading.activeAnimator.SetFloat("speed", 0);
+                if (Loading.activeAnimator != null)
+                    Loading.activeAnimator.SetFloat("speed", 0);
                 PausedDueToBGM = true;
                 Active.GetComponent<Animator>().Play("BGMVolumeFadeOut", 0, 0.0f);
                 source.Stop();
@@ -39,7 +41,8 @@ public class BGMController : MonoBehaviour
     {
         Destroy(this.gameObject);
         PausedDueToBGM = false;
-        Loading.activeAnimator.SetFloat("speed", 1);
+        if (Loading.activeAnimator != null)
+            Loading.activeAnimator.SetFloat("speed", 1);
         Active.GetComponent<Animator>().Play("BGMVolumeAni", 0, 0.0f);
         Active.source.Play();
     }

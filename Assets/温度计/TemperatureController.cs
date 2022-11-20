@@ -53,6 +53,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
                         _chara.characterFormChanger.Form = CharacterForm.Water;
+                        SndPlayer.Play("water (" + Random.Range(1, 5) + ")");
                     }
                     else if (CharacterFormLock.isLocked(CharacterForm.Mist) == false)
                     {
@@ -60,6 +61,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(2).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Boil;
                         _chara.characterFormChanger.Form = CharacterForm.Mist;
+                        SndPlayer.Play("mist (" + Random.Range(1, 5) + ")");
                     }
                     break;
 
@@ -70,6 +72,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(2).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Boil;
                         _chara.characterFormChanger.Form = CharacterForm.Mist;
+                        SndPlayer.Play("mist (" + Random.Range(1, 5) + ")");
                     }
                     break;
             }
@@ -92,6 +95,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(1).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Standard;
                         _chara.characterFormChanger.Form = CharacterForm.Water;
+                        SndPlayer.Play("water (" + Random.Range(1, 5) + ")");
                     }
                     else if (CharacterFormLock.isLocked(CharacterForm.Ice) == false)
                     {
@@ -99,6 +103,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(0).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Zero;
                         _chara.characterFormChanger.Form = CharacterForm.Ice;
+                        SndPlayer.Play("ice (" + Random.Range(1, 5) + ")");
                     }
                     break;
 
@@ -109,6 +114,7 @@ public class TemperatureController : MonoBehaviour
                         transform.GetChild(0).gameObject.SetActive(true);
                         _chara.Temperature = Temperature.Zero;
                         _chara.characterFormChanger.Form = CharacterForm.Ice;
+                        SndPlayer.Play("ice (" + Random.Range(1, 5) + ")");
                     }
                     break;
             }
