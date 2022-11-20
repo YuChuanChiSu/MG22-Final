@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7482549442330639672}
   - component: {fileID: 7482549442330639673}
   - component: {fileID: 7482549442330639685}
+  - component: {fileID: 2790154584899464964}
+  - component: {fileID: -8376896249848863496}
+  - component: {fileID: -160778836650229883}
   m_Layer: 0
   m_Name: DNA
   m_TagString: Untagged
@@ -142,3 +145,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkObj: {fileID: 0}
   unlockForm: 0
+--- !u!114 &2790154584899464964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482549442330639679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68388d197fb2be541bf4f5bcb1d3e29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plotSelector: {fileID: -8376896249848863496}
+--- !u!114 &-8376896249848863496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482549442330639679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbc02a0b71774d4780ade62f787cecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-160778836650229883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482549442330639679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlotTag: Entry
+  PlotCode: 
+  ReInteractable: 0

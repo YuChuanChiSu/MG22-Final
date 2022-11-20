@@ -42,6 +42,7 @@ public class PlotController : InteractBase
         Active = this;
         PlotUnit unit = Plots.First(x => x.PlotTag == plotSelector.Select());
         ExecuteCode(unit.PlotCode);
+        Debug.Log(unit.PlotTag + " 已退出，可重复对话：" + unit.ReInteractable);
         return !unit.ReInteractable;
     }
     public void ExecutePlot(string tag)
@@ -54,6 +55,7 @@ public class PlotController : InteractBase
         List<Dialog> dialogs = new List<Dialog>();
         for(int i = line; i < cmd.Length; i++)
         {
+            Debug.Log("处理：" + cmd[i]);
             string[] p = cmd[i].Split('|');
             if (p[0] == "action")
             {
@@ -83,6 +85,7 @@ public class PlotController : InteractBase
             }
             else if (p[0] == "star")
             {
+                GetComponent<SpriteRenderer>().sprite = GetComponent<NPCPlotSelector>().WaterSprite;
                 LevelPass.Step++;
                 CharacterController.Instance.HP -= 20;
                 if (CharacterController.Instance.HP <= 0)
@@ -104,7 +107,7 @@ public class PlotController : InteractBase
                 });
                 return;
             }
-            else
+            else if (p[0] != "")
             {
                 Dialog dialog = new Dialog
                 {

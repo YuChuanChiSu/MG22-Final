@@ -1,16 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DNA : InteractBase
+public class DNA : PlotEvent
 {
     public GameObject linkObj;
     public CharacterModel.CharacterForm unlockForm;
 
-    public override bool Interact()
+    public IEnumerator Unlock(Action callback)
     {
         CharacterFormLock.UnLock(unlockForm);
         linkObj.SetActive(true);
-        return true;
+        callback();
+        yield break;
     }
 }
