@@ -8160,6 +8160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7482549442330639675, guid: 1015515d0cc2fb84b9f30745663167ac, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7482549442330639679, guid: 1015515d0cc2fb84b9f30745663167ac, type: 3}
       propertyPath: m_Name
       value: DNA (1)
@@ -8371,6 +8375,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2206284949194353746, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44905ed6fb30a41479dc3b6c05dac824, type: 3}
     - target: {fileID: 2206284949194353758, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
       propertyPath: m_Name
       value: CheckPoint
@@ -8385,7 +8393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2206284949194353759, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.51914
+      value: -13.02
       objectReference: {fileID: 0}
     - target: {fileID: 2206284949194353759, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
       propertyPath: m_LocalPosition.z
