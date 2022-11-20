@@ -33,7 +33,7 @@ public class DialogController : MonoBehaviour
         Name.text = dialogs[0].Character;
         Callback = callback;
         if (dialogs[0].AudioFile != "" && dialogs[0].AudioFile != null) 
-            SndPlayer.Play("Speak\\" + dialogs[0].AudioFile);
+            SndPlayer.Play("Speak\\" + dialogs[0].Character + "\\" + dialogs[0].AudioFile);
     }
     public void Vanish()
     {
@@ -79,7 +79,7 @@ public class DialogController : MonoBehaviour
                     Name.text = Dialogs[dIndex].Character;
                     wIndex = 0;
                     if (Dialogs[dIndex].AudioFile != "" && Dialogs[dIndex].AudioFile != null)
-                        SndPlayer.Play("Speak\\" + Dialogs[dIndex].AudioFile);
+                        SndPlayer.Play("Speak\\" + Dialogs[dIndex].Character + "\\" + Dialogs[dIndex].AudioFile);
                 }
             }
         }
