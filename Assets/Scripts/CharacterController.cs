@@ -236,11 +236,6 @@ public class CharacterController : ObservableMonoBehavior
             HP = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if(collision.tag == "Hurt")
-        {
-            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
-            HP = 0; // 策划改需求针刺即死 -= 20;
-        }
         /**Debug.Log(rb.velocity.y);
         if (Form == CharacterForm.Ice && collision.tag == "Map"&& rb.velocity.y<-18)
         {
@@ -248,6 +243,14 @@ public class CharacterController : ObservableMonoBehavior
             HP = 0;
         }**/
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Hurt")
+        {
+            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
+            HP = 0; // 策划改需求针刺即死 -= 20;
+        }
     }
 
     private void OnDestroy()
