@@ -64,6 +64,9 @@ public class CharacterController : ObservableMonoBehavior
     public GameObject Hp80;
     public GameObject Hp100;
     public float y_max;
+    public GameObject state_ice;
+    public GameObject state_mist;
+    public GameObject state_water;
 
 
     [HideInInspector]
@@ -128,11 +131,19 @@ public class CharacterController : ObservableMonoBehavior
     }
     void Movement()
     {
+
         float horizontalmove = Input.GetAxis("Horizontal");
         float facemove = Input.GetAxisRaw("Horizontal");
         float ymove = Input.GetAxisRaw("Vertical");
         if(Form == CharacterForm.Water)
         {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                state_water.SetActive(true);
+            }
+            
+            
+            
             animator.SetBool("water", true);
             animator.SetBool("ice", false);
             animator.SetBool("mist", false);
@@ -169,6 +180,10 @@ public class CharacterController : ObservableMonoBehavior
             animator.SetBool("mist", false);
             if (!isHurt)
             {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    state_ice.SetActive(true);
+                }
                 if (horizontalmove != 0 )
                 {
                     animator.SetBool("idle_ice", false);
@@ -194,6 +209,10 @@ public class CharacterController : ObservableMonoBehavior
         }
         if (Form == CharacterForm.Mist)
         {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                state_mist.SetActive(true);
+            }
             animator.SetBool("ice", false);
             animator.SetBool("water", false);
             animator.SetBool("mist", true);
