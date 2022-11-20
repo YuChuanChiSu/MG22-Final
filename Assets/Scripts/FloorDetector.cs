@@ -39,8 +39,8 @@ public class FloorDetector : MonoBehaviour
             }
             leaveY = CharacterController.Instance.transform.position.y;
             // 如果不是因为跳跃造成的，这个过程不应该能够跳跃
-            if (MoveController.JumpCount == 0)
-                MoveController.JumpCount = MoveController.MaxJumpCount;
+            /**if (MoveController.JumpCount == 0)
+                MoveController.JumpCount = MoveController.MaxJumpCount;**/
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

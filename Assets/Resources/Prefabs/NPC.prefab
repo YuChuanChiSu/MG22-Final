@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 209676146629967973}
   - component: {fileID: 209676146629967974}
   - component: {fileID: 209676146629967975}
-  - component: {fileID: 209676146629967969}
+  - component: {fileID: 820435550}
   - component: {fileID: 209676146629967971}
   - component: {fileID: 209676146629967970}
+  - component: {fileID: 820435549}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 209676146629967976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.56, y: 0.57, z: 0}
-  m_LocalScale: {x: 2.8965, y: 2.8502, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5377358, g: 0.43522915, b: 0.07899352, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c35e79eae41886d4f9609deded948c3f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,18 +103,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.019284248, y: -0.5592352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.27, y: 6.27}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.6639547, y: 5.049636}
   m_EdgeRadius: 0
 --- !u!114 &209676146629967975
 MonoBehaviour:
@@ -127,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68388d197fb2be541bf4f5bcb1d3e29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plotSelector: {fileID: 209676146629967969}
---- !u!114 &209676146629967969
+  plotSelector: {fileID: 820435550}
+--- !u!114 &820435550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,9 +138,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 209676146629967976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cbc02a0b71774d4780ade62f787cecb, type: 3}
+  m_Script: {fileID: 11500000, guid: 48090e3160b8160419503f7be9477cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaterSprite: {fileID: 21300000, guid: 47f882b9d38bd3c4c80f3e9e22a53353, type: 3}
 --- !u!114 &209676146629967971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlotTag: Entry
-  PlotCode: 'NPC|NPC
+  PlotCode: 'NPC|NPC1
 
     show
 
@@ -174,3 +176,18 @@ MonoBehaviour:
   FTipInstance: {fileID: 0}
   Interactor: {fileID: 0}
   Interacted: 0
+--- !u!114 &820435549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209676146629967976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlotTag: Fail
+  PlotCode: "Chloe|\u6211\u6CA1\u529E\u6CD5\u548C\u4F60\u4EA4\u6D41\u3002\r\nChloe|\u4E5F\u8BB8\u90A3\u4E2A\u6E29\u5EA6\u8BA1\u80FD\u591F\u5E2E\u5230\u6211\u3002\r\nshow"
+  ReInteractable: 1
