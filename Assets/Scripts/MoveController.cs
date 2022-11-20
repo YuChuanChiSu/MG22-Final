@@ -40,7 +40,7 @@ public class MoveController : MonoBehaviour
     {
         Vector3 rotation = new Vector3(0, 0, _chara.isHandstand ? 180 : 0);
         _camera.localEulerAngles += (rotation - _camera.localEulerAngles) / 30;
-        TemperatureController.FormLock = (_camera.localEulerAngles.z > 0.1 && _camera.localEulerAngles.z < 179.9);
+        TemperatureController.FormLock = (_chara.State == CharacterModel.CharacterState.Jump && _chara.Form == CharacterModel.CharacterForm.Mist);
 
         Vector2 v = _rigidbody.velocity;
         bool falling = (!_chara.isHandstand && v.y <= 0) || (_chara.isHandstand && v.y >= 0);
