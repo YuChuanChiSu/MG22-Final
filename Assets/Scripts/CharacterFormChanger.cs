@@ -65,13 +65,19 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
         {
             if (value == CharacterForm.Mist)
             {
+                SndPlayer.Play("ÆÁÄ»Ðý×ª");
                 LevelPass.Instance.BgAnimator.SetFloat("Speed", 1.0f);
                 LevelPass.Instance.BgAnimator.Play("BackgroundRotation", 0, 0.0f);
+                LevelPass.Instance.ArrowAnimator.transform.localEulerAngles = new Vector3(0, 0, 180);
+                LevelPass.Instance.ArrowAnimator.Play("ArrowAnimation", 0, 0.0f);
             }
             else if (Form == CharacterForm.Mist)
             {
+                SndPlayer.Play("ÆÁÄ»Ðý×ª");
                 LevelPass.Instance.BgAnimator.SetFloat("Speed", -1.0f);
                 LevelPass.Instance.BgAnimator.Play("BackgroundRotation", 0, 1.0f);
+                LevelPass.Instance.ArrowAnimator.transform.localEulerAngles = new Vector3(0, 0, 0);
+                LevelPass.Instance.ArrowAnimator.Play("ArrowAnimation", 0, 0.0f);
             }
             SetProperty(ref _chara.Form, value, comparer);
         }

@@ -1365,7 +1365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 348490343100036093, guid: 47cd2aa90400a6d459b85ef83147a9f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.1
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 348490343100036093, guid: 47cd2aa90400a6d459b85ef83147a9f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47853,7 +47853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 348490343100036093, guid: 47cd2aa90400a6d459b85ef83147a9f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -68.4
+      value: -69.42
       objectReference: {fileID: 0}
     - target: {fileID: 348490343100036093, guid: 47cd2aa90400a6d459b85ef83147a9f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47959,11 +47959,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2215266330973545979, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: MaxStep
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2215266330973545979, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: TargetScene
-      value: 3
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566420852293103854, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: PostcardName
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 3058344843265461925, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48121,6 +48125,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.29
       objectReference: {fileID: 0}
+    - target: {fileID: 5831274231760555772, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62
+      objectReference: {fileID: 0}
     - target: {fileID: 6598134187672886555, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode
       value: "Gene|\u770B\u6765\u4F60\u5DF2\u7ECF\u660E\u767D\u4E0B\u4E00\u4E2A\u6625\u5929\u600E\u6837\u5230\u6765\xB7\xB7\xB7|\u7A7A\u70751\r\nChole|\u5F53\u88AB\u9057\u5FD8\u7684\u79CD\u5B50\uFF0C\u68A6\u4E2D\u7684\u6625\u5929\u6216\u8BB8\u66F4\u52A0\u9999\u751C\u3002|\u60B2\u4F242\r\nGene|\u4E00\u9897\u4E0D\u518D\u5F00\u82B1\u7684\u6811\uFF0C\u4E3A\u4EC0\u4E48\u8FD8\u8FD9\u6837\u7EFF\u7740\uFF1F|\u7A7A\u70751\r\nChole|...|\u5E73\u97591\r\nshow\npass"
@@ -48173,6 +48181,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3b0e3fcd267221d4393fb260508abb19, type: 3}
+    - target: {fileID: 8304272181301793060, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 8300000, guid: b2507e4b2448e474f9bad3056d60801b, type: 3}
+    - target: {fileID: 8458361857710513909, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3ed3bb8b16ba45d47bfecfea2ef14719, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
 --- !u!20 &1241669104 stripped
