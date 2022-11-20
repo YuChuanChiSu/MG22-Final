@@ -10,6 +10,11 @@ public class TemperatureController : MonoBehaviour
 {
     public static TemperatureController Instance; 
     CharacterController _chara;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         _chara = CharacterController.Instance;
@@ -17,6 +22,7 @@ public class TemperatureController : MonoBehaviour
 
     private void Update()
     {
+        if (PlotController.PlotLock) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Up();

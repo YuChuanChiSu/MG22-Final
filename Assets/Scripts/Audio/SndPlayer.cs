@@ -11,7 +11,7 @@ public class SndPlayer : MonoBehaviour
     /// </summary>
     /// <param name="snd">音效文件名</param>
     public static void Play(string snd)
-        => Play(Resources.Load<AudioClip>("SE\\" + snd));
+        => Play(Resources.Load<AudioClip>("Audio\\" + snd));
     public static void Play(AudioClip snd)
     {
         GameObject fab = (GameObject)Resources.Load("SndPlayer");    // 载入母体
