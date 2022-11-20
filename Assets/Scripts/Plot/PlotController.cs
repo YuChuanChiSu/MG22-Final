@@ -9,6 +9,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 using UnityEngine.Serialization;
 using System.Linq;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class PlotController : InteractBase
 {
@@ -84,6 +85,10 @@ public class PlotController : InteractBase
             {
                 LevelPass.Step++;
                 CharacterController.Instance.HP -= 20;
+                if (CharacterController.Instance.HP <= 0)
+                {
+                    ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "民胞物与，以水归水...";
+                }
             }
             else if (p[0] == "pass")
             {

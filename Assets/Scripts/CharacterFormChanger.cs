@@ -61,7 +61,20 @@ public class CharacterFormChanger : GenericToolKit.Mvvm.ObservableMonoBehavior
     public CharacterForm Form
     {
         get => _chara.Form;
-        set => SetProperty(ref _chara.Form, value, comparer);
+        set
+        {
+            if (value == CharacterForm.Mist)
+            {
+                LevelPass.Instance.BgAnimator.SetFloat("Speed", 1.0f);
+                LevelPass.Instance.BgAnimator.Play("BackgroundRotation", 0, 0.0f);
+            }
+            else if (Form == CharacterForm.Mist)
+            {
+                LevelPass.Instance.BgAnimator.SetFloat("Speed", -1.0f);
+                LevelPass.Instance.BgAnimator.Play("BackgroundRotation", 0, 1.0f);
+            }
+            SetProperty(ref _chara.Form, value, comparer);
+        }
     }
 
     /// <summary>
