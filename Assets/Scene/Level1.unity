@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 804800010}
   - component: {fileID: 804800009}
   - component: {fileID: 804800012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -7144,6 +7144,10 @@ PrefabInstance:
       propertyPath: collider
       value: 
       objectReference: {fileID: 737646482}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3976905620499945866, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.7

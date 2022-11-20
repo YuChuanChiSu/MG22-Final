@@ -131,23 +131,25 @@ public class CharacterController : ObservableMonoBehavior
         if(Form == CharacterForm.Water)
         {
             animator.SetBool("water", true);
+            animator.SetBool("ice", false);
+            animator.SetBool("mist", false);
             if (!isHurt)
             {
-                if (horizontalmove != 0)
+                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_water",false);
                     animator.SetFloat("walking", Mathf.Abs(facemove));
                     animator.SetBool("jumping_water", false);
                 }
 
-                if (State == CharacterState.Jump)
+                if (!collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_water", false);
                     animator.SetBool("jumping_water", true);
-                    animator.SetFloat("walking", 0);
+                    animator.SetFloat("walking", -1f);
 
                 }
-                if (horizontalmove == 0)
+                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_water", true);
                     animator.SetFloat("walking", Mathf.Abs(facemove));
@@ -160,27 +162,59 @@ public class CharacterController : ObservableMonoBehavior
         if (Form == CharacterForm.Ice)
         {
             animator.SetBool("ice",true);
+            animator.SetBool("water", false);
+            animator.SetBool("mist", false);
             if (!isHurt)
             {
-                if (horizontalmove != 0)
+                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_ice", false);
                     animator.SetFloat("walking_ice", Mathf.Abs(facemove));
                     animator.SetBool("jumping_ice", false);
                 }
 
-                if (State == CharacterState.Jump)
+                if (State == CharacterState.Jump&& !collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_ice", false);
                     animator.SetBool("jumping_ice", true);
                     animator.SetFloat("walking_ice", 0);
 
                 }
-                if (horizontalmove == 0)
+                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_ice", true);
                     animator.SetFloat("walking_ice", Mathf.Abs(facemove));
                     animator.SetBool("jumping_ice", false);
+                }
+            }
+
+        }
+        if (Form == CharacterForm.Mist)
+        {
+            animator.SetBool("ice", false);
+            animator.SetBool("water", false);
+            animator.SetBool("mist", true);
+            if (!isHurt)
+            {
+                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
+                {
+                    animator.SetBool("idle_mist", false);
+                    animator.SetFloat("walking_mist", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_mist", false);
+                }
+
+                if (State == CharacterState.Jump && !collider.IsTouchingLayers(layerMask))
+                {
+                    animator.SetBool("idle_mist", false);
+                    animator.SetBool("jumping_mist", true);
+                    animator.SetFloat("walking_mist", 0);
+
+                }
+                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
+                {
+                    animator.SetBool("idle_ mist", true);
+                    animator.SetFloat("walking_mist", Mathf.Abs(facemove));
+                    animator.SetBool("jumping_mist", false);
                 }
             }
 
