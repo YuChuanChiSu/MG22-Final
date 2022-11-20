@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class TemperatureController : MonoBehaviour
 {
+    public static bool FormLock = false;
+
     public static TemperatureController Instance; 
     CharacterController _chara;
     private void Awake()
@@ -22,7 +24,7 @@ public class TemperatureController : MonoBehaviour
 
     private void Update()
     {
-        if (PlotController.PlotLock) return;
+        if (PlotController.PlotLock || FormLock) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Up();

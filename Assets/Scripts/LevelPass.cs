@@ -30,6 +30,7 @@ public class LevelPass : MonoBehaviour
     public long MaxStep;
     public string TargetScene;
     public Text DisplayText;
+    public Animator BgAnimator;
 
     private void Awake()
     {

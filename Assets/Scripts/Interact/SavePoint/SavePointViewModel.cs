@@ -78,7 +78,7 @@ public class SavePointViewModel : ObservableObject
         CharacterController.Instance.gameObject.transform.position = RecentSavePosition;
         CharacterController.Instance.HP = RecentHP;
         // 重置其他状态
-        CharacterController.Instance.Form = CharacterModel.CharacterForm.Water;
+        CharacterController.Instance.characterFormChanger.Form = CharacterModel.CharacterForm.Water;
         CharacterController.Instance.isHandstand = false;
         TemperatureController.Instance.TemperatureReset();
 

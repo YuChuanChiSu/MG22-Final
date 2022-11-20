@@ -8,8 +8,9 @@ using UnityEngine;
 /// </summary>
 public class MoveController : MonoBehaviour
 {
-    public const int MaxJumpCount = 1;
+    public const int MaxJumpCount = 2;
     public static int JumpCount = 0;
+    public static bool MapTouching = false;
     public Rigidbody2D _rigidbody;
     Transform _camera;
     CharacterController _chara;
@@ -39,6 +40,8 @@ public class MoveController : MonoBehaviour
     {
         Vector3 rotation = new Vector3(0, 0, _chara.isHandstand ? 180 : 0);
         _camera.localEulerAngles += (rotation - _camera.localEulerAngles) / 30;
+        TemperatureController.FormLock = (_camera.localEulerAngles.z > 0.1 && _camera.localEulerAngles.z < 179.9);
+
         Vector2 v = _rigidbody.velocity;
         bool falling = (!_chara.isHandstand && v.y <= 0) || (_chara.isHandstand && v.y >= 0);
         _rigidbody.gravityScale = 10 * (_chara.isHandstand ? -1.0f : 1.0f) * (falling ? 0.3f : 1.0f);
@@ -65,7 +68,7 @@ public class MoveController : MonoBehaviour
             {
                 v.x = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount && falling && _chara.Form != CharacterModel.CharacterForm.Water)
+            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount && MapTouching && _chara.Form != CharacterModel.CharacterForm.Water)
             {
                 v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
                 JumpCount++;

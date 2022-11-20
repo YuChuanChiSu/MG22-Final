@@ -138,7 +138,7 @@ public class CharacterController : ObservableMonoBehavior
             animator.SetBool("mist", false);
             if (!isHurt)
             {
-                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove != 0)
                 {
                     animator.SetBool("idle_water",false);
                     animator.SetFloat("walking", Mathf.Abs(facemove));
@@ -152,7 +152,7 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetFloat("walking", 0);
 
                 }
-                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove == 0 )
                 {
                     animator.SetBool("idle_water", true);
                     animator.SetFloat("walking", Mathf.Abs(facemove));
@@ -169,7 +169,7 @@ public class CharacterController : ObservableMonoBehavior
             animator.SetBool("mist", false);
             if (!isHurt)
             {
-                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove != 0 )
                 {
                     animator.SetBool("idle_ice", false);
                     animator.SetFloat("walking_ice", Mathf.Abs(facemove));
@@ -183,7 +183,7 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetFloat("walking_ice", 0);
 
                 }
-                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove == 0 )
                 {
                     animator.SetBool("idle_ice", true);
                     animator.SetFloat("walking_ice", Mathf.Abs(facemove));
@@ -200,7 +200,7 @@ public class CharacterController : ObservableMonoBehavior
             animator.SetBool("idle_water",false);
             if (!isHurt)
             {
-                if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove != 0)
                 {
                     animator.SetBool("idle_mist", false);
                     animator.SetFloat("walking_mist", Mathf.Abs(facemove));
@@ -214,7 +214,7 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetFloat("walking_mist", 0);
 
                 }
-                if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
+                if (horizontalmove == 0 )
                 {
                     animator.SetBool("idle_mist", true);
                     animator.SetFloat("walking_mist", Mathf.Abs(facemove));
@@ -232,17 +232,21 @@ public class CharacterController : ObservableMonoBehavior
         y_max = rb.velocity.y;
         if(collision.tag == "Ddl")
         {
+            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "时间亘河之外...是什么？";
             HP = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if(collision.tag == "Hurt")
         {
-            HP -= 20;
+            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
+            HP = 0; // 策划改需求针刺即死 -= 20;
         }
-        if(Form == CharacterForm.Ice && collision.tag == "Map"&& rb.velocity.y<-18)
+        /**Debug.Log(rb.velocity.y);
+        if (Form == CharacterForm.Ice && collision.tag == "Map"&& rb.velocity.y<-18)
         {
+            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "骄傲的冰块，不允许自己下...不要往下跳啦！";
             HP = 0;
-        }
+        }**/
 
     }
 
