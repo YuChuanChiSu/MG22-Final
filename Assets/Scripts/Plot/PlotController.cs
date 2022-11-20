@@ -19,6 +19,8 @@ public class PlotController : InteractBase
     public static bool PlotLock = false;
     public static PlotController Active = null;
     private static GameObject _dialogPrefab;
+
+    public Func<IEnumerator> NextScene { get; set; }
     public static GameObject DialogPrefab
     {
         get
@@ -95,7 +97,7 @@ public class PlotController : InteractBase
             }
             else if (p[0] == "pass")
             {
-                LevelPass.Step = 100;
+                StartCoroutine(NextScene());
             }
             else if (p[0] == "show")
             {

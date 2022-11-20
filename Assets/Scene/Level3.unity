@@ -47965,6 +47965,10 @@ PrefabInstance:
       propertyPath: TargetScene
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 2566420852293103854, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: PostcardName
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 3058344843265461925, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90.7
