@@ -145,11 +145,11 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetBool("jumping_water", false);
                 }
 
-                if (!collider.IsTouchingLayers(layerMask))
+                if (State == CharacterState.Jump)
                 {
                     animator.SetBool("idle_water", false);
                     animator.SetBool("jumping_water", true);
-                    animator.SetFloat("walking", -1f);
+                    animator.SetFloat("walking", 0);
 
                 }
                 if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
@@ -197,6 +197,7 @@ public class CharacterController : ObservableMonoBehavior
             animator.SetBool("ice", false);
             animator.SetBool("water", false);
             animator.SetBool("mist", true);
+            animator.SetBool("idle_water",false);
             if (!isHurt)
             {
                 if (horizontalmove != 0 && collider.IsTouchingLayers(layerMask))
@@ -215,7 +216,7 @@ public class CharacterController : ObservableMonoBehavior
                 }
                 if (horizontalmove == 0 && collider.IsTouchingLayers(layerMask))
                 {
-                    animator.SetBool("idle_ mist", true);
+                    animator.SetBool("idle_mist", true);
                     animator.SetFloat("walking_mist", Mathf.Abs(facemove));
                     animator.SetBool("jumping_mist", false);
                 }
