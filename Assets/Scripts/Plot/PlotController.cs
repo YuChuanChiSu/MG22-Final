@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 using System.Linq;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using static UnityEngine.UI.CanvasScaler;
 
 public class PlotController : InteractBase
 {
@@ -38,6 +39,10 @@ public class PlotController : InteractBase
     {
         Plots = GetComponents<PlotUnit>();
     }
+    public void RunDirectly()
+    {
+        ExecutePlot("Entry");
+    }
     public override bool Interact()
     {
         PlotLock = true;
@@ -49,10 +54,13 @@ public class PlotController : InteractBase
     }
     public void ExecutePlot(string tag)
     {
+        PlotLock = true;
         ExecuteCode(Plots.First(x => x.PlotTag == tag).PlotCode, 0);
     }
     public void ExecuteCode(string code, int line = 0)
     {
+        code = code.Replace("\r", "");
+        code = code.Replace("\nstar\nshow", "\nshow\nstar");
         string[] cmd = code.Split('\r', '\n');
         List<Dialog> dialogs = new List<Dialog>();
         for(int i = line; i < cmd.Length; i++)
@@ -97,12 +105,19 @@ public class PlotController : InteractBase
             }
             else if (p[0] == "pass")
             {
-                if (DialogController.Instance == null)
-                    Instantiate(DialogPrefab).SetActive(true);
+                if (DialogController.Instance != null)
+                    DialogController.Instance.Terminate();
                 StartCoroutine(NextScene(() =>
                 {
                     ExecuteCode(code, i + 1);
                 }));
+                return;
+            }
+            else if (p[0] == "go")
+            {
+                if (DialogController.Instance != null)
+                    DialogController.Instance.Terminate();
+                Loading.Run(p[1]);
                 return;
             }
             else if (p[0] == "ending")
@@ -114,13 +129,13 @@ public class PlotController : InteractBase
                 {
                     end.HE.SetActive(true);
                     end.BE.SetActive(false);
-                    PostcardPanel.instance.PostcardName = "End1";
+                    PostcardPanel.instance.PostcardName = "End2";
                 }
                 else
                 {
                     end.HE.SetActive(false);
                     end.BE.SetActive(true);
-                    PostcardPanel.instance.PostcardName = "End2";
+                    PostcardPanel.instance.PostcardName = "End1";
                 }
                 EndingPass.Callback = () =>
                 {

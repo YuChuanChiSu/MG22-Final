@@ -54,7 +54,7 @@ public class PostcardPanel : MonoBehaviour
             }
         }
 
-        while (!Input.GetMouseButtonDown(0))
+        while (!Input.GetMouseButtonDown(0) && !Input.GetKeyUp(KeyCode.Space))
             yield return null;
 
         LevelPass.Step = 100;

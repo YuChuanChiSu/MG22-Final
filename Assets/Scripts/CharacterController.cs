@@ -20,7 +20,7 @@ public class CharacterController : ObservableMonoBehavior
     public Animator animator;
     public Rigidbody2D rb;
     public LayerMask layerMask;
-    public Collider2D collider;
+    public Collider2D _collider;
 
     /// <summary>
     /// ������̬
@@ -87,8 +87,14 @@ public class CharacterController : ObservableMonoBehavior
         moveController = gameObject.AddComponent<MoveController>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
         Instance = this;
+
+        
+    }
+    private void Start()
+    {
+        //ServiceLocator.Instance.SavePoint.UpdateRua();
     }
     private void Update()
     {
@@ -191,7 +197,7 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetBool("jumping_ice", false);
                 }
 
-                if (State == CharacterState.Jump&& !collider.IsTouchingLayers(layerMask))
+                if (State == CharacterState.Jump&& !_collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_ice", false);
                     animator.SetBool("jumping_ice", true);
@@ -226,7 +232,7 @@ public class CharacterController : ObservableMonoBehavior
                     animator.SetBool("jumping_mist", false);
                 }
 
-                if (State == CharacterState.Jump && !collider.IsTouchingLayers(layerMask))
+                if (State == CharacterState.Jump && !_collider.IsTouchingLayers(layerMask))
                 {
                     animator.SetBool("idle_mist", false);
                     animator.SetBool("jumping_mist", true);
@@ -247,9 +253,10 @@ public class CharacterController : ObservableMonoBehavior
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
+        Debug.Log("相撞：" + collision.name);
         Vector2 p = transform.position;
         y_max = rb.velocity.y;
-        if(collision.tag == "Ddl")
+        if(collision.gameObject.name.ToLower().StartsWith("dead line"))
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "时间亘河之外...是什么？";
             HP = 0;
@@ -261,11 +268,17 @@ public class CharacterController : ObservableMonoBehavior
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "骄傲的冰块，不允许自己下...不要往下跳啦！";
             HP = 0;
         }**/
+        if (collision.gameObject.name.ToLower().StartsWith("firehurt"))
+        {
+            ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
+            HP = 0; // 策划改需求针刺即死 -= 20;
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Hurt")
+        Debug.Log("相撞：" + collision.gameObject.name);
+        if (collision.gameObject.name.ToLower().StartsWith("firehurt"))
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
             HP = 0; // 策划改需求针刺即死 -= 20;
@@ -274,8 +287,11 @@ public class CharacterController : ObservableMonoBehavior
 
     private void OnDestroy()
     {
+        //ServiceLocator.Instance.SavePoint.Goodbye();
+        Debug.Log("已卸载。");
         LastHP = HP;
         Dispose();
+        Instance = null;
     }
 
     

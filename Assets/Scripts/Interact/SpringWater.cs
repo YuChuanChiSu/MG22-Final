@@ -17,6 +17,6 @@ public class SpringWater : InteractBase
     {
         CharacterController.Instance.HP = 80;
         OnSpringWaterTriggered?.Invoke(this);
-        return true;
+        return false;
     }
 }

@@ -18,8 +18,9 @@ public class LevelPass : MonoBehaviour
             step = value;
             if (step > Instance.MaxStep)
             {
-                if (Instance.TargetScene != "")
-                    Loading.Run(Instance.TargetScene);
+                /**if (Instance.TargetScene != "")
+                    Loading.Run(Instance.TargetScene);**/
+
                 step = 0;
             }
             else
@@ -33,10 +34,33 @@ public class LevelPass : MonoBehaviour
     public string TargetScene;
     public Text DisplayText;
     public Animator BgAnimator, ArrowAnimator;
+    public GameObject Destination;
 
     private void Awake()
     {
         Instance = this;
         DisplayText.text = step + "/" + Instance.MaxStep;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            CharacterFormLock.UnLock(CharacterModel.CharacterForm.Ice);
+            CharacterFormLock.UnLock(CharacterModel.CharacterForm.Mist);
+        }
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            CharacterController.Instance.gameObject.transform.position = Destination.transform.position;
+            // ÷ÿ÷√∆‰À˚◊¥Ã¨
+            CharacterController.Instance.moveController._rigidbody.velocity = Vector3.zero;
+            CharacterController.Instance.isHandstand = false;
+            TemperatureController.Instance.TemperatureReset();
+            CharacterController.Instance.characterFormChanger.Form = CharacterModel.CharacterForm.Water;
+        }
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            Step = MaxStep;
+        }
     }
 }

@@ -28,6 +28,7 @@ public class SavePointViewModel : ObservableObject
     /// </summary>
     public long RecentHP { get; set; }
 
+    private static long LastHP = 80;
     private const int _timeControl = 50;
     private const float _adder = 0.02f; 
     private Text _hpEmptyText;
@@ -50,6 +51,17 @@ public class SavePointViewModel : ObservableObject
     {
         if (args.PropertyName == "HP")
         {
+            GameObject HPTip = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs\\HPTip"), 
+                                                        CharacterController.Instance.transform.position, 
+                                                        CharacterController.Instance.transform.localRotation, 
+                                                        GameObject.Find("TipCanvas").transform);
+            Text HPText = HPTip.GetComponent<Text>();
+            HPText.text = (LastHP < CharacterController.Instance.HP ? "+" : "") + (CharacterController.Instance.HP - LastHP);
+            HPText.color = (LastHP < CharacterController.Instance.HP ? Color.green : Color.red);
+            Debug.Log(CharacterController.Instance.isHandstand);
+            LastHP = CharacterController.Instance.HP;
+            HPTip.SetActive(true);
+            HPTip.transform.localEulerAngles = new Vector3(0, 0, CharacterController.Instance.isHandstand ? 180 : 0);
             if (CharacterController.Instance.HP <= 0)
             {
                 _dispatcher.StartCoroutine(ResetCorotine());
@@ -99,6 +111,18 @@ public class SavePointViewModel : ObservableObject
     public override void Dispose()
     {
         base.Dispose();
+        //CharacterController.Instance.PropertyChanged -= OnHPChanged;
+    }
+
+    public void Goodbye()
+    {
         CharacterController.Instance.PropertyChanged -= OnHPChanged;
+    }
+
+    public void UpdateRua()
+    {
+        CharacterController.Instance.PropertyChanged += OnHPChanged;
+        _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
+        _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
     }
 }

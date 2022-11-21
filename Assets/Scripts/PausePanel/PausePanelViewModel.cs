@@ -32,7 +32,7 @@ public class PausePanelViewModel : ObservablePanel
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Exit()
-        => UnityEngine.Application.Quit();
+        => Application.Quit();
 
     public void SetActive()
         => SetCompoent(true);

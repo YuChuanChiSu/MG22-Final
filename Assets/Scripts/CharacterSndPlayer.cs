@@ -18,7 +18,7 @@ public class CharacterSndPlayer : MonoBehaviour
     }
     private void Update()
     {
-        if (Math.Abs(Math.Abs(_rigidbody.velocity.x) - _chara.MoveSpeed) <= 0.1f)
+        if (Math.Abs(Math.Abs(_rigidbody.velocity.x) - _chara.MoveSpeed) <= 0.1f && _chara.State == CharacterModel.CharacterState.Walk)
         {
             if (!audioSource.isPlaying)
             {

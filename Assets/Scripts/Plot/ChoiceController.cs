@@ -13,6 +13,12 @@ public class ChoiceController : MonoBehaviour
     }
     public void Click()
     {
+        if (PlotTag.StartsWith("go"))
+        {
+            PlotController.PlotLock = false;
+            Loading.Run("Level" + PlotTag.Split("go")[1]);
+            return;
+        }
         Debug.Log("Jump to plot '" + PlotTag + "'");
         if (PlotTag == "")
         {

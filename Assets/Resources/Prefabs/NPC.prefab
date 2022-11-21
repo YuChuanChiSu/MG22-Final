@@ -189,5 +189,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlotTag: Fail
-  PlotCode: "Chloe|\u6211\u6CA1\u529E\u6CD5\u548C\u4F60\u4EA4\u6D41\u3002\r\nChloe|\u4E5F\u8BB8\u90A3\u4E2A\u6E29\u5EA6\u8BA1\u80FD\u591F\u5E2E\u5230\u6211\u3002\r\nshow"
+  PlotCode: "Chole|\u6211\u6CA1\u529E\u6CD5\u548C\u4F60\u4EA4\u6D41\u3002\r\nChole|\u4E5F\u8BB8\u90A3\u4E2A\u6E29\u5EA6\u8BA1\u80FD\u591F\u5E2E\u5230\u6211\u3002\r\nshow"
   ReInteractable: 1
