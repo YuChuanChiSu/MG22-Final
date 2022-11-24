@@ -36,7 +36,6 @@ public class SavePointViewModel : ObservableObject
 
     public SavePointViewModel(ISyncDispatcher dispatcher)
     {
-        CharacterController.Instance.PropertyChanged += OnHPChanged;
         _dispatcher = dispatcher;
         _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
         _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
@@ -47,7 +46,7 @@ public class SavePointViewModel : ObservableObject
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="args"></param>
-    private void OnHPChanged(object sender, PropertyChangedEventArgs args)
+    public void OnHPChanged(object sender, PropertyChangedEventArgs args)
     {
         if (args.PropertyName == "HP")
         {
@@ -64,6 +63,8 @@ public class SavePointViewModel : ObservableObject
             HPTip.transform.localEulerAngles = new Vector3(0, 0, CharacterController.Instance.isHandstand ? 180 : 0);
             if (CharacterController.Instance.HP <= 0)
             {
+                _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
+                _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
                 _dispatcher.StartCoroutine(ResetCorotine());
             }
         }

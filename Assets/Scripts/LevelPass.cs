@@ -18,8 +18,8 @@ public class LevelPass : MonoBehaviour
             step = value;
             if (step > Instance.MaxStep)
             {
-                /**if (Instance.TargetScene != "")
-                    Loading.Run(Instance.TargetScene);**/
+                if (Instance.TargetScene != "")
+                    Loading.Run(Instance.TargetScene);
 
                 step = 0;
             }

@@ -81,7 +81,8 @@ public class CharacterController : ObservableMonoBehavior
     private void Awake()
     {
         HP = LastHP;
-
+        
+        PropertyChanged += ServiceLocator.Instance.SavePoint.OnHPChanged;
         characterAnimator = gameObject.AddComponent<CharacterAnimator>();
         characterFormChanger = gameObject.AddComponent<CharacterFormChanger>();
         moveController = gameObject.AddComponent<MoveController>();
