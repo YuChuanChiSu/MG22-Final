@@ -45,6 +45,7 @@ public class MoveController : MonoBehaviour
         Vector2 v = _rigidbody.velocity;
         bool falling = (!_chara.isHandstand && v.y <= 0) || (_chara.isHandstand && v.y >= 0);
         _rigidbody.gravityScale = 10 * (_chara.isHandstand ? -1.0f : 1.0f) * (falling ? 0.3f : 1.0f);
+        if (PlotController.PlotLock && v.x != 0) v.x = 0;
         if (!PlotController.PlotLock)
         {
             if (!(JumpCount > 0 && Math.Abs(v.y) <= 0.1f))

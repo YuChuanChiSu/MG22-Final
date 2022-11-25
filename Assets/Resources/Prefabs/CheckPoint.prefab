@@ -103,6 +103,7 @@ MonoBehaviour:
   FTipInstance: {fileID: 0}
   Interactor: {fileID: 0}
   Interacted: 0
+  InteractTipSprite: {fileID: 21300000, guid: 2c369ae94e4301944a59b7c8e581e4d8, type: 3}
 --- !u!114 &2206284949194353744
 MonoBehaviour:
   m_ObjectHideFlags: 0

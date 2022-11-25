@@ -105,6 +105,7 @@ MonoBehaviour:
   FTipInstance: {fileID: 0}
   Interactor: {fileID: 0}
   Interacted: 0
+  InteractTipSprite: {fileID: 21300000, guid: 657808354d2c7d247bb3b0ec0f8cb0b2, type: 3}
 --- !u!61 &7482549442330639673
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ public class ChoiceController : MonoBehaviour
         {
             PlotController.PlotLock = false;
             Loading.Run("Level" + PlotTag.Split("go")[1]);
+            if (DialogController.Instance != null)
+                DialogController.Instance.Terminate();
+            foreach (GameObject choiceObj in RegisteredChoiceObj)
+                choiceObj.GetComponent<ChoiceController>().Hide();
+            RegisteredChoiceObj.Clear();
             return;
         }
         Debug.Log("Jump to plot '" + PlotTag + "'");

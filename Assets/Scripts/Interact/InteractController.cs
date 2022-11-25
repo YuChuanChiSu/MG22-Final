@@ -33,6 +33,7 @@ public class InteractController : MonoBehaviour
     /// </summary>
     [HideInInspector]
     public bool Interacted = false;
+    public Sprite InteractTipSprite;
     private void Awake()
     {
         Interactor = GetComponent<InteractBase>();
@@ -52,6 +53,7 @@ public class InteractController : MonoBehaviour
             if (Active != null) Active.LostFocus();
             Active = this;
             FTipInstance = Instantiate(FTipPrefab, transform.position + new Vector3(0, transform.localScale.y, 0) / 2 * (transform.localEulerAngles.z > 0 ? -1.0f : 1.0f), transform.localRotation);
+            FTipInstance.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = InteractTipSprite;
             FTipInstance.SetActive(true);
         }
     }
