@@ -2550,7 +2550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3976905620875706092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.55689, y: -0.6908598, z: -9.96139}
+  m_LocalPosition: {x: -39.356888, y: 8.4891405, z: -9.96139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3538,9 +3538,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6309A\\D\u5DE6\u53F3\u79FB\u52A8\uFF0C\u7A7A\u683C\u8DF3\u8DC3\uFF0C\u2191\u2193\u5207\u6362\u5F62\u6001\u3002\r\n\u6309\u4F4FE\u952E\u53EF\u67E5\u770B\u5C0F\u5730\u56FE\u3002\n<b><color=cyan>\u51B0</color></b>\u5F62\u6001:
-    \u4E0D\u80FD\u8DF3\u8DC3\uFF0C\u53EF\u4EE5\u704C\u6E89\uFF0C\u53EF\u4EE5\u4ECE\u8F83\u9AD8\u5904\u8DCC\u843D\u3002\r\n\U0001F4A7<b><color=blue>\u6C34</color></b>\u5F62\u6001:
-    \u53EF\u4EE5\u8DF3\u8DC3\uFF0C\u5BB9\u6613\u6454\u788E\uFF0C\u65E0\u6CD5\u704C\u6E89\u3002\r\n\U0001F32B\uFE0F<b>\u6C14</b>\u5F62\u6001:
+  m_Text: "\u6309A\\D\u5DE6\u53F3\u79FB\u52A8\uFF0C\u7A7A\u683C\u8DF3\u8DC3\uFF0C\u2191\u2193\u5207\u6362\u5F62\u6001\u3002\r\n\u6309\u4F4FE\u952E\u53EF\u67E5\u770B\u5C0F\u5730\u56FE\u3002\r\n<b><color=cyan>\u51B0</color></b>\u5F62\u6001:
+    \u53EF\u4EE5\u8DF3\u8DC3\uFF0C\u5BB9\u6613\u6454\u788E\uFF0C\u65E0\u6CD5\u704C\u6E89\u3002\r\n<b><color=blue>\u6C34</color></b>\u5F62\u6001:
+    \u4E0D\u80FD\u8DF3\u8DC3\uFF0C\u53EF\u4EE5\u704C\u6E89\uFF0C\u53EF\u4EE5\u4ECE\u8F83\u9AD8\u5904\u8DCC\u843D\u3002\r\n<b>\u6C14</b>\u5F62\u6001:
     \u53EF\u4EE5\u5012\u53CD\u5929\u7F61\uFF0C\u53EF\u4EE5\u8DF3\u8DC3\uFF0C\u4E5F\u53EF\u4EE5\u704C\u6E89\u3002"
 --- !u!1 &8047080292707823955
 GameObject:
