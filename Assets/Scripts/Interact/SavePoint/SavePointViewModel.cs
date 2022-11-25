@@ -40,7 +40,7 @@ public class SavePointViewModel : ObservableObject
         _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
         _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
     }
-
+    
     /// <summary>
     /// HP变化事件
     /// </summary>

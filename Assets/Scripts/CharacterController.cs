@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using GenericToolKit.Mvvm;
+using Unity.VisualScripting;
 
 /// <summary>
 /// ���������
@@ -82,7 +83,6 @@ public class CharacterController : ObservableMonoBehavior
     {
         HP = LastHP;
         
-        PropertyChanged += ServiceLocator.Instance.SavePoint.OnHPChanged;
         characterAnimator = gameObject.AddComponent<CharacterAnimator>();
         characterFormChanger = gameObject.AddComponent<CharacterFormChanger>();
         moveController = gameObject.AddComponent<MoveController>();
@@ -93,9 +93,10 @@ public class CharacterController : ObservableMonoBehavior
 
         
     }
+
     private void Start()
     {
-        //ServiceLocator.Instance.SavePoint.UpdateRua();
+        PropertyChanged += ServiceLocator.Instance.SavePoint.OnHPChanged;
     }
     private void Update()
     {
