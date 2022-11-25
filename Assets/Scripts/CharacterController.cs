@@ -115,21 +115,41 @@ public class CharacterController : ObservableMonoBehavior
             Hp100.SetActive(true);
         }else if(HP == 80)
         {
+            Hp0.SetActive(false);
+            Hp20.SetActive(false);
+            Hp40.SetActive(false);
+            Hp60.SetActive(false);
             Hp80.SetActive(true);
             Hp100.SetActive(false);
         }else  if(HP == 60)
         {
+            Hp0.SetActive(false);
+            Hp20.SetActive(false);
+            Hp40.SetActive(false);
             Hp80.SetActive(false);
             Hp60.SetActive(true);
+            Hp100.SetActive(false);
         }else if(HP == 40)
         {
+            Hp0.SetActive(false);
+            Hp20.SetActive(false);
             Hp60.SetActive(false);
             Hp40.SetActive(true);
+            Hp80.SetActive(false);
+            Hp100.SetActive(false);
         }else if(HP == 20){
+            Hp0.SetActive(false);
             Hp40.SetActive(false);
             Hp20.SetActive(true);
+            Hp60.SetActive(false);
+            Hp80.SetActive(false); 
+            Hp100.SetActive(false);
         }else if(HP == 0)
         {
+            Hp40.SetActive(false);
+            Hp60.SetActive(false);
+            Hp80.SetActive(false);
+            Hp100.SetActive(true);
             Hp20.SetActive(false);
             Hp0.SetActive(true);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
