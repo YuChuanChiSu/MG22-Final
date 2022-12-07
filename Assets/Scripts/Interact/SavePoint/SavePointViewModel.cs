@@ -114,16 +114,4 @@ public class SavePointViewModel : ObservableObject
         base.Dispose();
         //CharacterController.Instance.PropertyChanged -= OnHPChanged;
     }
-
-    public void Goodbye()
-    {
-        CharacterController.Instance.PropertyChanged -= OnHPChanged;
-    }
-
-    public void UpdateRua()
-    {
-        CharacterController.Instance.PropertyChanged += OnHPChanged;
-        _hpEmptyText = ServiceLocator.Instance?.HidePanel.GetHPEmptyText();
-        _hidePanel = ServiceLocator.Instance?.HidePanel.GetPanelImage();
-    }
 }

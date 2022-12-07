@@ -11418,7 +11418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -12237,6 +12237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1658070690799514378, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2175791415324943408, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -12288,6 +12292,10 @@ PrefabInstance:
     - target: {fileID: 2566420852293103854, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PostcardName
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306711644884234184, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3976905619504276242, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
