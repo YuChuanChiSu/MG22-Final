@@ -1,14 +1,14 @@
-name: Actions 😎
+name: 自动导出试玩版本
 
 on: [push, pull_request]
 
 jobs:
   build:
-    name: Build my project ✨
+    name: 导出结果 ✨
     runs-on: ubuntu-latest
     steps:
       # Checkout
-      - name: Checkout repository
+      - name: 检查仓库
         uses: actions/checkout@v2
         with:
           lfs: true
@@ -22,7 +22,7 @@ jobs:
             Library-
 
       # Test
-      - name: Run tests
+      - name: 运行测试
         uses: game-ci/unity-test-runner@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -30,7 +30,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
-      - name: Build project
+      - name: 导出试玩版本
         uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
