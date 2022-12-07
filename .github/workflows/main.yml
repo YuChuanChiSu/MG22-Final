@@ -1,17 +1,32 @@
-name: 自动导出试玩版本
+name: Actions 😎
 
 on: [push, pull_request]
 
 jobs:
   build:
-    name: 导出结果 ✨
+    name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
-      # Checkout
-      - name: 检查仓库
+      # Checkout (without LFS)
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      # Git LFS
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v2
+        id: lfs-cache
         with:
-          lfs: true
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
 
       # Cache
       - uses: actions/cache@v2
@@ -22,7 +37,7 @@ jobs:
             Library-
 
       # Test
-      - name: 运行测试
+      - name: Run tests
         uses: game-ci/unity-test-runner@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -30,7 +45,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
-      - name: 导出试玩版本
+      - name: Build project
         uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
