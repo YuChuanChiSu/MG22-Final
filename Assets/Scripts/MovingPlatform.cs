@@ -38,7 +38,7 @@ public class MovingPlatform : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += new Vector3(MoveSpeed * direction * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(MoveSpeed * direction * Time.deltaTime / 2, 0, 0);
         if (transform.position.x <= leftX)
         {
             direction = -direction;

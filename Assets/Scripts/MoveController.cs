@@ -50,12 +50,12 @@ public class MoveController : MonoBehaviour
         {
             if (!(JumpCount > 0 && Math.Abs(v.y) <= 0.1f))
             {
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.D) || InputController.IsPress[(int)KeyCode.D])
                 {
                     _chara.spriteRenderer.flipX = _chara.isHandstand;
                     v.x = _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
                 }
-                else if (Input.GetKey(KeyCode.A))
+                else if (Input.GetKey(KeyCode.A) || InputController.IsPress[(int)KeyCode.A])
                 {
                     _chara.spriteRenderer.flipX = !_chara.isHandstand;
                     v.x = (-1) * _chara.MoveSpeed * (_chara.isHandstand ? -1.0f : 1.0f);
@@ -69,9 +69,11 @@ public class MoveController : MonoBehaviour
             {
                 v.x = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount && MapTouching && _chara.Form != CharacterModel.CharacterForm.Water)
+            if ((Input.GetKeyDown(KeyCode.Space) || InputController.IsPress[(int)KeyCode.Space]) && 
+                JumpCount < MaxJumpCount && MapTouching && _chara.Form != CharacterModel.CharacterForm.Water)
             {
                 v.y = _chara.JumpDegree * (_chara.isHandstand ? -1.0f : 1.0f);
+                //_rigidbody.AddForce(new Vector2(0, _chara.JumpDegree  * (_chara.isHandstand ? -1.0f : 1.0f)));
                 JumpCount++;
                 //Debug.Log(JumpCount + "¶ÎÌø£¡");
             }

@@ -24,6 +24,8 @@ public class TemperatureController : MonoBehaviour
 
     private void Update()
     {
+        for(int i = 0; i < 3; i++)
+            transform.GetChild(i).gameObject.SetActive((int)_chara.Form == i);
         if (PlotController.PlotLock || FormLock) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {

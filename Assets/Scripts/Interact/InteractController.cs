@@ -78,7 +78,7 @@ public class InteractController : MonoBehaviour
     {
         if (PlotController.PlotLock) return;
         if (Active != this) return;
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.F) || InputController.IsPress[(int)KeyCode.F])
         {
             if(Interactor.Interact())
                 Interacted = true;

@@ -29,8 +29,8 @@ public class SavePointViewModel : ObservableObject
     public long RecentHP { get; set; }
 
     private static long LastHP = 80;
-    private const int _timeControl = 50;
-    private const float _adder = 0.02f; 
+    private const int _timeControl = 25;
+    private const float _adder = 0.04f; 
     private Text _hpEmptyText;
     private Image _hidePanel;
 
@@ -95,6 +95,8 @@ public class SavePointViewModel : ObservableObject
         CharacterController.Instance.isHandstand = false;
         TemperatureController.Instance.TemperatureReset();
         CharacterController.Instance.characterFormChanger.Form = CharacterModel.CharacterForm.Water;
+        for (int i = 0; i < InputController.IsPress.Length; i++)
+            InputController.IsPress[i] = false;
 
         for (int i = 0; i < _timeControl; i++)
             yield return new WaitForSeconds(0.01f);

@@ -69,6 +69,7 @@ public class CharacterController : ObservableMonoBehavior
     public GameObject state_mist;
     public GameObject state_water;
 
+    public GameObject[] FormEffect1, FormEffect2;
 
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
@@ -100,6 +101,12 @@ public class CharacterController : ObservableMonoBehavior
     }
     private void Update()
     {
+        for(int i = 0;i < 3; i++)
+        {
+            FormEffect1[i].SetActive(i == (int)Form);
+            FormEffect2[i].SetActive(i == (int)Form);
+        }
+
         if (!isHurt)
         {
             Movement();
@@ -160,8 +167,8 @@ public class CharacterController : ObservableMonoBehavior
     void Movement()
     {
 
-        float horizontalmove = Input.GetAxis("Horizontal");
-        float facemove = Input.GetAxisRaw("Horizontal");
+        float horizontalmove = State == CharacterState.Walk ? 1.0f : 0f; //Input.GetAxis("Horizontal");
+        float facemove = State == CharacterState.Walk ? 1.0f : 0f; //Input.GetAxisRaw("Horizontal");
         float ymove = Input.GetAxisRaw("Vertical");
         if(Form == CharacterForm.Water)
         {
@@ -273,9 +280,8 @@ public class CharacterController : ObservableMonoBehavior
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
-
     {
-        Debug.Log("相撞：" + collision.name);
+        //Debug.Log("相撞：" + collision.name);
         Vector2 p = transform.position;
         y_max = rb.velocity.y;
         if(collision.gameObject.name.ToLower().StartsWith("dead line"))
@@ -299,7 +305,7 @@ public class CharacterController : ObservableMonoBehavior
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("相撞：" + collision.gameObject.name);
+        //Debug.Log("相撞：" + collision.gameObject.name);
         if (collision.gameObject.name.ToLower().StartsWith("firehurt"))
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";

@@ -48637,6 +48637,18 @@ PrefabInstance:
       propertyPath: PostcardName
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 3018853366750809821, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: RotationModule.x.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018853366750809821, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: RotationModule.y.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018853366764974799, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 3058344843265461925, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90.7
@@ -48797,6 +48809,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.6000004
       objectReference: {fileID: 0}
+    - target: {fileID: 3976905620875706064, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: orthographic size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3976905620875706065, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.6
@@ -48805,9 +48821,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.6000004
       objectReference: {fileID: 0}
+    - target: {fileID: 4225611717661573749, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5831274231760555772, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920122143173420451, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6598134187672886555, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode

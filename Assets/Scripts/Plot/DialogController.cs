@@ -59,7 +59,7 @@ public class DialogController : MonoBehaviour
                 wIndex++;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) || InputController.IsPress[(int)KeyCode.Space])
         {
             if(wIndex < Dialogs[dIndex].Content.Length)
             {
