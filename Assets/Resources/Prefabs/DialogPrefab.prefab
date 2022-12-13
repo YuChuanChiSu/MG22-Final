@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bindKeyCode: 32
-  isPress: 0
+  IsTemp: 0
 --- !u!1 &2969696688257330311
 GameObject:
   m_ObjectHideFlags: 0

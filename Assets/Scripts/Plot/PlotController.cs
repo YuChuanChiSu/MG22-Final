@@ -46,6 +46,8 @@ public class PlotController : InteractBase
     public override bool Interact()
     {
         PlotLock = true;
+        for (int i = 0; i < InputController.IsPress.Length; i++)
+            InputController.IsPress[i] = false;
         Active = this;
         PlotUnit unit = Plots.First(x => x.PlotTag == plotSelector.Select());
         ExecuteCode(unit.PlotCode);
@@ -167,6 +169,8 @@ public class PlotController : InteractBase
         if (DialogController.Instance != null)
             DialogController.Instance.Terminate();
         PlotLock = false;
+        for (int i = 0; i < InputController.IsPress.Length; i++)
+            InputController.IsPress[i] = false;
         Active = null;
     }
 }

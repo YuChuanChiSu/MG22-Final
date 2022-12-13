@@ -78,7 +78,15 @@ public class InteractController : MonoBehaviour
     {
         if (PlotController.PlotLock) return;
         if (Active != this) return;
-        if (Input.GetKeyUp(KeyCode.F) || InputController.IsPress[(int)KeyCode.F])
+        bool touched = false;
+        if (Input.GetMouseButton(0))
+        {
+            foreach (RaycastHit2D hit in Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero))
+            {
+                if (hit.collider.gameObject.name == "FBack") touched = true;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.F) || InputController.IsPress[(int)KeyCode.F] || touched)
         {
             if(Interactor.Interact())
                 Interacted = true;

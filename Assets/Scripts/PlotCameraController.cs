@@ -13,10 +13,5 @@ public class PlotCameraController : MonoBehaviour
         float size = (PlotController.PlotLock ? 3.0f : 7.0f);
         Camera.m_Lens.OrthographicSize += (size - Camera.m_Lens.OrthographicSize) / 40f;
         Controller.SetActive(!PlotController.PlotLock);
-        if (PlotController.PlotLock)
-        {
-            for (int i = 0; i < InputController.IsPress.Length; i++)
-                InputController.IsPress[i] = false;
-        }
     }
 }
