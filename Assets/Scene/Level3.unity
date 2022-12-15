@@ -5894,6 +5894,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4055230846749200835, guid: a3e9ba3a65a9d514c82980d64dcdad09, type: 3}
   m_PrefabInstance: {fileID: 522168056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &528949898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528949901}
+  - component: {fileID: 528949900}
+  - component: {fileID: 528949899}
+  m_Layer: 0
+  m_Name: OpenPlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &528949899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528949898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlotTag: Entry
+  PlotCode: "Chole|\u201C\u4E0E\u6211\u4E0D\u540C\u7684\u4EBA\u7C7B\u3002\u201D|\u5E73\u97591\r\nGene|\u201C\u8EAF\u4F53\u56E0\u4F9B\u751F\u800C\u626D\u66F2\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C\u8C01\u7684\u751F\u547D\u6B32\u56FE\u51CC\u9A7E\u4F17\u751F\u3002\u201D|\u60B2\u4F241\r\nGene|\u201C\u4FEF\u4EF0\u65F6\u95F4\u4E98\u6CB3\uFF0C\u68EE\u6797\u6CD5\u5219\u65E0\u7F6A\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C...\u201D|\u5E73\u97591\r\nshow"
+  ReInteractable: 0
+--- !u!114 &528949900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528949898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68388d197fb2be541bf4f5bcb1d3e29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoRun: 1
+  DialogPrefabName: BlackDialog
+  plotSelector: {fileID: 0}
+--- !u!4 &528949901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528949898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5016613, y: -0.10599688, z: 58.42723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &530148641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4055230846749200835, guid: a3e9ba3a65a9d514c82980d64dcdad09, type: 3}
@@ -48880,6 +48943,10 @@ PrefabInstance:
     - target: {fileID: 7459369440770387996, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756857502600066075, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7943019930136009564, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Sprite

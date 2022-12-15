@@ -19,15 +19,17 @@ public class PlotController : InteractBase
     /// </summary>
     public static bool PlotLock = false;
     public static PlotController Active = null;
+    public bool AutoRun = false;
     private static GameObject _dialogPrefab;
 
     public Func<Action,IEnumerator> NextScene { get; set; }
-    public static GameObject DialogPrefab
+    public string DialogPrefabName = "DialogPrefab";
+    public GameObject DialogPrefab
     {
         get
         {
             if (_dialogPrefab == null)
-                _dialogPrefab = Resources.Load<GameObject>("Prefabs\\DialogPrefab");
+                _dialogPrefab = Resources.Load<GameObject>("Prefabs\\" + DialogPrefabName);
             return _dialogPrefab;
         }
     }
@@ -38,6 +40,8 @@ public class PlotController : InteractBase
     private void Awake()
     {
         Plots = GetComponents<PlotUnit>();
+        if (AutoRun)
+            ExecutePlot("Entry");
     }
     public void RunDirectly()
     {

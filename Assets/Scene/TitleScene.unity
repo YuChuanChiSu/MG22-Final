@@ -508,8 +508,6 @@ GameObject:
   - component: {fileID: 737319804}
   - component: {fileID: 737319803}
   - component: {fileID: 737319802}
-  - component: {fileID: 737319806}
-  - component: {fileID: 737319805}
   m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
@@ -581,9 +579,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 737319806}
-        m_TargetAssemblyTypeName: PlotController, Assembly-CSharp
-        m_MethodName: RunDirectly
+      - m_Target: {fileID: 681624291}
+        m_TargetAssemblyTypeName: TitleUIController, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -592,18 +590,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 506968429}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &737319803
 MonoBehaviour:
@@ -643,34 +629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737319800}
   m_CullTransparentMesh: 1
---- !u!114 &737319805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737319800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlotTag: Entry
-  PlotCode: "\u7CFB\u7EDF|\u60A8\u5E0C\u671B\u4ECE\u54EA\u4E00\u4E2A\u5173\u5361\u5F00\u59CB\uFF1F\uFF08\u6309\u7A7A\u683C\u952E\u7EE7\u7EED\uFF09\r\nshow\r\nchoice|\u5173\u53611|go1|\u5173\u53612|go2|\u5173\u53613|go3|\u5173\u53614|go4"
-  ReInteractable: 0
---- !u!114 &737319806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737319800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68388d197fb2be541bf4f5bcb1d3e29c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plotSelector: {fileID: 0}
 --- !u!1 &1568023138
 GameObject:
   m_ObjectHideFlags: 0

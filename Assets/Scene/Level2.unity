@@ -13579,6 +13579,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642082639, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 98116570225327417, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Name
       value: LevelBase
@@ -13773,7 +13777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756857502600066075, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7943019930136009564, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Sprite
@@ -14868,6 +14872,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3e9ba3a65a9d514c82980d64dcdad09, type: 3}
+--- !u!1 &1791252280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791252283}
+  - component: {fileID: 1791252282}
+  - component: {fileID: 1791252281}
+  m_Layer: 0
+  m_Name: OpenPlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1791252281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791252280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f171dd6b3cf45c646906bf66b6c43c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlotTag: Entry
+  PlotCode: "Chole|\u201C\u6C99\u6F20\u822C\u7684\u6D77\u6D0B\u3002\u201D|\u5E73\u97591\r\nGene|\u201C\u4ECB\u5B50\u6811\u7684\u89E6\u624B\u80FD\u7CBE\u51C6\u6355\u6349\u6BCF\u4E00\u6EF4\u6C34\u5206\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C\u4ECB\u5B50\u6811\uFF1F\u8FD9\u573A\u5929\u707E\u7684\u59CB\u4F5C\u4FD1\u8005\u5417\uFF1F\u201D|\u7591\u60D11\r\nGene|\u201C\u8089\u4F53\u5B89\u5B9A\uFF0C\u7075\u9B42\u6253\u8F6C\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C...\u201D|\u5E73\u97591\r\nshow"
+  ReInteractable: 0
+--- !u!114 &1791252282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791252280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68388d197fb2be541bf4f5bcb1d3e29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoRun: 1
+  DialogPrefabName: BlackDialog
+  plotSelector: {fileID: 0}
+--- !u!4 &1791252283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791252280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5016613, y: -0.10599688, z: 58.42723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1799720932
 PrefabInstance:
   m_ObjectHideFlags: 0

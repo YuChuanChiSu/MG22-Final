@@ -6,7 +6,7 @@ public class TitleUIController : MonoBehaviour
 {
     public void StartGame()
     {
-        Loading.Run("Level1");
+        Loading.Run("LevelSelect");
     }
     public void ExitGame()
     {
