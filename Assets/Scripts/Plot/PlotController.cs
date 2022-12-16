@@ -20,7 +20,7 @@ public class PlotController : InteractBase
     public static bool PlotLock = false;
     public static PlotController Active = null;
     public bool AutoRun = false;
-    private static GameObject _dialogPrefab;
+    private GameObject _dialogPrefab;
 
     public Func<Action,IEnumerator> NextScene { get; set; }
     public string DialogPrefabName = "DialogPrefab";

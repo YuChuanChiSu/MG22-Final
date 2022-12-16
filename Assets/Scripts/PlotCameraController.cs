@@ -11,7 +11,7 @@ public class PlotCameraController : MonoBehaviour
     void Update()
     {
         float size = (PlotController.PlotLock ? 3.0f : 7.0f);
-        Camera.m_Lens.OrthographicSize += (size - Camera.m_Lens.OrthographicSize) / 40f;
+        Camera.m_Lens.OrthographicSize += (size - Camera.m_Lens.OrthographicSize) / 12f;
         Controller.SetActive(!PlotController.PlotLock);
     }
 }

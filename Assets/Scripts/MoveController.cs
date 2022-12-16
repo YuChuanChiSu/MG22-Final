@@ -39,7 +39,7 @@ public class MoveController : MonoBehaviour
     public void Update()
     {
         Vector3 rotation = new Vector3(0, 0, _chara.isHandstand ? 180 : 0);
-        _camera.localEulerAngles += (rotation - _camera.localEulerAngles) / 30;
+        _camera.localEulerAngles += (rotation - _camera.localEulerAngles) / 10;
         TemperatureController.FormLock = (_chara.State == CharacterModel.CharacterState.Jump && _chara.Form == CharacterModel.CharacterForm.Mist);
 
         Vector2 v = _rigidbody.velocity;
