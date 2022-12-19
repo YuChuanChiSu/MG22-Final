@@ -1,0 +1,16 @@
+{"Name":"死亡并非终点","Description":"对于水只是三次循环","Awarded":0}
+{"Name":"撞了南墙不回头","Description":"死亡十次，勇敢的Chole也会受伤","Awarded":0}
+{"Name":"死亡并非终点","Description":"死亡并非终点，也别来回跑啊！","Awarded":0}
+{"Name":"聆听永夜的呼吸","Description":"无尽荒芜的永夜，不断尝试的少女","Awarded":0}
+{"Name":"上上善若水","Description":"水菩萨浇水，自身难保","Awarded":0}
+{"Name":"飞水扑火","Description":"我因炙烈之火干涸，星球是否同样痛苦","Awarded":0}
+{"Name":"时间之外","Description":"不断下坠，用个体的水对抗时间亘河","Awarded":0}
+{"Name":"宁为冰碎","Description":"你拥有一颗最剔透的冰心","Awarded":0}
+{"Name":"三相达人","Description":"不愧是Chole，轻易做到了其他人做不到的事情","Awarded":0}
+{"Name":"变！变！变！","Description":"棒！棒！棒！","Awarded":0}
+{"Name":"三相大成","Description":"水的二十变","Awarded":0}
+{"Name":"三相之神","Description":"浪花淘尽Chole","Awarded":0}
+{"Name":"上善若水","Description":"一位生灵因你重获新生","Awarded":0}
+{"Name":"把水还给水","Description":"把水还给水，让生长的生长","Awarded":0}
+{"Name":"善恶难判","Description":"不确定，再看看","Awarded":0}
+{"Name":"目光长远","Description":"拯救需要理由","Awarded":0}

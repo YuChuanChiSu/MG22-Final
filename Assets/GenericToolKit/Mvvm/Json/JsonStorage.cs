@@ -18,42 +18,42 @@ namespace GenericToolKit.Mvvm.Json
 
         public void Write<T>(string fileName, T obj)
         { 
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Create, FileAccess.Write))
                using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                 sw.WriteLine(JsonUtility.ToJson(obj));
         }
 
         public async ValueTask WriteAsync<T>(string fileName, T obj)
         {
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Create, FileAccess.Write))
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     await sw.WriteLineAsync(JsonUtility.ToJson(obj));
         }
 
         public void Append<T>(string fileName, T obj)
         {
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Append, FileAccess.Write))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Append, FileAccess.Write))
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     sw.WriteLine(JsonUtility.ToJson(obj));
         }
 
         public async ValueTask AppendAsync<T>(string fileName, T obj)
         {
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Append, FileAccess.Write))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Append, FileAccess.Write))
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     await sw.WriteLineAsync(JsonUtility.ToJson(obj));
         }
 
         public T Read<T>(string fileName)
         {
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Open, FileAccess.Read))
                 using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                     return JsonUtility.FromJson<T>(sr.ReadToEnd());
         }
 
         public async ValueTask<T> ReadAsync<T>(string fileName)
         {
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Open, FileAccess.Read))
             using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                 return JsonUtility.FromJson<T>(await sr.ReadToEndAsync());
         }
@@ -63,7 +63,7 @@ namespace GenericToolKit.Mvvm.Json
             IList<T> list = new List<T>();
             string[] jsons;
 
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Open, FileAccess.Read))
                 using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                     jsons = sr.ReadToEnd().Split("\r\n");
 
@@ -77,7 +77,7 @@ namespace GenericToolKit.Mvvm.Json
             IList<T> list = new List<T>();
             string[] jsons;
 
-            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.json"), FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(Path.Combine(GlobalConfiguration.JsonPath, $"{fileName}.txt"), FileMode.Open, FileAccess.Read))
             using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                 jsons = (await sr.ReadToEndAsync()).Split('\r', '\n');
 
