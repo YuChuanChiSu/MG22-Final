@@ -31154,6 +31154,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907497127}
     - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: Death
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: collider
       value: 
       objectReference: {fileID: 1907497126}

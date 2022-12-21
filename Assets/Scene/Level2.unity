@@ -13583,6 +13583,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 642082642, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 98116570225327417, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Name
       value: LevelBase
@@ -13692,6 +13696,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: Death
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: collider
       value: 
       objectReference: {fileID: 1938439876}
@@ -13717,15 +13725,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976905620875706065, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.7
+      value: -11.940001
       objectReference: {fileID: 0}
     - target: {fileID: 3976905620875706065, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.8
+      value: -0.6908598
       objectReference: {fileID: 0}
     - target: {fileID: 4128022100405200302, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148330128715460419, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477243635761041836, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 447.99976
       objectReference: {fileID: 0}
     - target: {fileID: 6598134187672886555, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode
@@ -13787,6 +13803,10 @@ PrefabInstance:
       propertyPath: bgm
       value: 
       objectReference: {fileID: 8300000, guid: 5bf13b5b2bfb4fc4c93e2d8eab17b872, type: 3}
+    - target: {fileID: 8350623467602098595, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00024414062
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
 --- !u!1001 &1540540214

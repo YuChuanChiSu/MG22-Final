@@ -12225,6 +12225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PassNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 642082639, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 98116570225327417, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Name
       value: LevelBase
@@ -12402,6 +12406,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 737646486}
     - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: Death
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976905620499945862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: collider
       value: 
       objectReference: {fileID: 1941865883}
@@ -12539,7 +12547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756857502600066075, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8304272181301793060, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: bgm

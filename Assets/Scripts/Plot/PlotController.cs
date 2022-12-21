@@ -107,6 +107,8 @@ public class PlotController : InteractBase
                 if (CharacterController.Instance.HP <= 0)
                 {
                     ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "民胞物与，以水归水...";
+                    Globle.GWaterDeath += 1;
+                    Debug.Log(Globle.GWaterDeath);
                 }
             }
             else if (p[0] == "pass")

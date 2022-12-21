@@ -18,6 +18,8 @@ public class CharacterController : ObservableMonoBehavior
     public static CharacterController Instance { get; private set; }
     public static long LastHP = 80;
 
+    
+
     public Animator animator;
     public Rigidbody2D rb;
     public LayerMask layerMask;
@@ -68,6 +70,20 @@ public class CharacterController : ObservableMonoBehavior
     public GameObject state_ice;
     public GameObject state_mist;
     public GameObject state_water;
+    public bool isDeath = true;
+    public long D = 0;
+    public long IceDeath = 0;
+    public long FireDeath = 0;
+    public long OutDeath1 = 0;
+    public long OutDeath2 = 0;
+
+    public bool ice = true;
+    public bool mist = true;
+    public bool water = false;
+    public long Switch = 0;
+    public bool fireHurt = false;
+
+    public float delayTime = 1;
 
     public GameObject[] FormEffect1, FormEffect2;
 
@@ -101,6 +117,14 @@ public class CharacterController : ObservableMonoBehavior
     }
     private void Update()
     {
+        if (Time.time >= delayTime)
+        {
+            Globle.Time += Time.time;
+            delayTime += Time.time;
+        }
+        OutDeath2 = OutDeath1 / 3;
+        Globle.GOutDeath2 = Globle.GOutDeath1 / 3;
+        IceDeath = D - OutDeath2 - FireDeath -Globle.GWaterDeath;
         for(int i = 0;i < 3; i++)
         {
             FormEffect1[i].SetActive(i == (int)Form);
@@ -121,6 +145,7 @@ public class CharacterController : ObservableMonoBehavior
             Hp60.SetActive(false);
             Hp80.SetActive(false);
             Hp100.SetActive(true);
+            isDeath = true;
         }else if(HP == 80)
         {
             Hp0.SetActive(false);
@@ -129,7 +154,9 @@ public class CharacterController : ObservableMonoBehavior
             Hp60.SetActive(false);
             Hp80.SetActive(true);
             Hp100.SetActive(false);
-        }else  if(HP == 60)
+            isDeath = true;
+        }
+        else  if(HP == 60)
         {
             Hp0.SetActive(false);
             Hp20.SetActive(false);
@@ -137,7 +164,9 @@ public class CharacterController : ObservableMonoBehavior
             Hp80.SetActive(false);
             Hp60.SetActive(true);
             Hp100.SetActive(false);
-        }else if(HP == 40)
+            isDeath = true;
+        }
+        else if(HP == 40)
         {
             Hp0.SetActive(false);
             Hp20.SetActive(false);
@@ -145,22 +174,36 @@ public class CharacterController : ObservableMonoBehavior
             Hp40.SetActive(true);
             Hp80.SetActive(false);
             Hp100.SetActive(false);
-        }else if(HP == 20){
+            isDeath = true;
+        }
+        else if(HP == 20){
             Hp0.SetActive(false);
             Hp40.SetActive(false);
             Hp20.SetActive(true);
             Hp60.SetActive(false);
             Hp80.SetActive(false); 
             Hp100.SetActive(false);
-        }else if(HP == 0)
+            isDeath = true;
+        }
+        else if(HP == 0)
         {
+            
             Hp40.SetActive(false);
             Hp60.SetActive(false);
             Hp80.SetActive(false);
             Hp100.SetActive(true);
             Hp20.SetActive(false);
             Hp0.SetActive(true);
+            if(isDeath == true)
+            {
+                Globle.Death += 1;
+                D += 1;
+                isDeath = false;
+                fireHurt = true;
+            }
+           
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }
 
     }
@@ -172,6 +215,15 @@ public class CharacterController : ObservableMonoBehavior
         float ymove = Input.GetAxisRaw("Vertical");
         if(Form == CharacterForm.Water)
         {
+            if(water == true)
+            {
+                Globle.GSwitch += 1;
+                Switch += 1;
+                water = false;
+                ice = true;
+                mist = true;
+            }
+            
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 state_water.SetActive(true);
@@ -210,6 +262,15 @@ public class CharacterController : ObservableMonoBehavior
         }
         if (Form == CharacterForm.Ice)
         {
+            if (ice == true)
+            {
+                Globle.GSwitch += 1;
+                Switch += 1;
+                ice = false;
+                water = true;
+                mist = true;
+            }
+            
             animator.SetBool("ice",true);
             animator.SetBool("water", false);
             animator.SetBool("mist", false);
@@ -244,6 +305,15 @@ public class CharacterController : ObservableMonoBehavior
         }
         if (Form == CharacterForm.Mist)
         {
+            if (mist == true)
+            {
+                Globle.GSwitch += 1;
+                Switch += 1;
+                mist = false;
+                water = true;
+                ice = true;
+            }
+            
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 state_mist.SetActive(true);
@@ -288,8 +358,11 @@ public class CharacterController : ObservableMonoBehavior
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "时间亘河之外...是什么？";
             HP = 0;
+            OutDeath1 += 1;
+            Globle.GOutDeath1 += 1;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        
         /**Debug.Log(rb.velocity.y);
         if (Form == CharacterForm.Ice && collision.tag == "Map"&& rb.velocity.y<-18)
         {
@@ -300,6 +373,13 @@ public class CharacterController : ObservableMonoBehavior
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
             HP = 0; // 策划改需求针刺即死 -= 20;
+            if(fireHurt == true)
+            {
+                FireDeath = FireDeath + 1;
+                fireHurt = false;
+                Globle.GFireDeath = FireDeath + 1;
+            }
+            
         }
 
     }
@@ -310,6 +390,7 @@ public class CharacterController : ObservableMonoBehavior
         {
             ServiceLocator.Instance.HidePanel.GetHPEmptyText().text = "自食...恶果...";
             HP = 0; // 策划改需求针刺即死 -= 20;
+            
         }
     }
 
