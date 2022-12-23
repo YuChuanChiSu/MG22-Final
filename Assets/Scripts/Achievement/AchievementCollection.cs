@@ -1,5 +1,6 @@
 using GenericToolKit.Mvvm;
 using GenericToolKit.Mvvm.Json;
+using GenericToolKit.Mvvm.UI;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -8,8 +9,9 @@ using System.IO;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class AchievementCollection : ObservableObject
+public class AchievementCollection : ObservablePanel
 {
     private readonly IList<AchievementModel> _achievementModels
         = new List<AchievementModel>();
@@ -42,6 +44,12 @@ public class AchievementCollection : ObservableObject
 
     public void MakeAwarded(AchievementEnum key)
         => _achievementModels[(int)key].Awarded = 1;
+
+    public void SetPanelEnable(int index, AchievementModel model)
+    {
+        GetCompoent<Image>($"Achievement{index}").gameObject.SetActive(model.Awarded == 1);
+        GetCompoent<Image>($"Cover{index}").gameObject.SetActive(model.Awarded == 0);
+    }
 
     public void OnApplicationQuit()
     {

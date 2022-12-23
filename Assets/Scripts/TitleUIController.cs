@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TitleUIController : MonoBehaviour
 {
+    public GameObject Achievement;
     public void StartGame()
     {
         Loading.Run("LevelSelect");
@@ -12,4 +13,7 @@ public class TitleUIController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void EnableAchievementPanel()
+        => Achievement.SetActive(true);
 }

@@ -31001,6 +31001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBase
       objectReference: {fileID: 0}
+    - target: {fileID: 98116570225327417, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 774785454593463243, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotTag
       value: BE
@@ -31185,6 +31189,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -29.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3976905620875706064, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: orthographic size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3976905620875706065, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.2
@@ -31196,6 +31204,10 @@ PrefabInstance:
     - target: {fileID: 4128022100405200303, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477243635761041836, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 447.99976
       objectReference: {fileID: 0}
     - target: {fileID: 5392948389037214173, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Color.a
