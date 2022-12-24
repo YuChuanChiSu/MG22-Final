@@ -7,6 +7,8 @@ public class FormChangeBtn : MonoBehaviour
     public CharacterModel.CharacterForm TargetForm;
     public void Touch()
     {
+        if (CharacterFormLock.isLocked(TargetForm))
+            return;
         CharacterController.Instance.Form = TargetForm;
         if (TargetForm == CharacterModel.CharacterForm.Ice)
             SndPlayer.Play("ice (" + Random.Range(1, 5) + ")");

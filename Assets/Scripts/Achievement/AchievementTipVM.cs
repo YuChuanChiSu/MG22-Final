@@ -18,10 +18,10 @@ public class AchievementTipVM : ObservablePanel
         Image image = GetCompoent<Image>($"Achievement{index}");
         Sequence sequence = DOTween.Sequence();
         sequence.AppendInterval(1f);
-        sequence.Append(image.rectTransform.DOLocalMoveX(600, 4f).OnComplete(()
+        sequence.Append(image.rectTransform.DOLocalMoveX(-143, 4f).OnComplete(()
             =>
         {
-            image.rectTransform.DOLocalMoveX(1300, 4f);
+            image.rectTransform.DOLocalMoveX(340, 4f);
         }));
 
         ServiceLocator.Instance.AchievementCollection.MakeAwarded((AchievementEnum)index);

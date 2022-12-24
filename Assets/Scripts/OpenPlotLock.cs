@@ -8,11 +8,11 @@ public class OpenPlotLock : MonoBehaviour
     public void PutLock()
     {
         PlotController.PlotLock = true;
-        BGM.SetActive(false);
+        //BGM.SetActive(false);
     }
     public void UnLock()
     {
         PlotController.PlotLock = false;
-        BGM.SetActive(true);
+        //BGM.SetActive(true);
     }
 }

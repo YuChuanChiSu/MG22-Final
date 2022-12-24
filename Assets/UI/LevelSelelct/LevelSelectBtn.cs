@@ -26,6 +26,7 @@ public class LevelSelectBtn : MonoBehaviour
             BgUI.sprite = Background;
             BtnUI.sprite = Active1;
             BtnTextUI.sprite = Active2;
+            LightUI.sprite = Light;
         }
         else
         {
@@ -44,6 +45,11 @@ public class LevelSelectBtn : MonoBehaviour
         }
         else
         {
+            if (TargetScene != "Level1")
+            {
+                CharacterFormLock.UnLock(CharacterModel.CharacterForm.Ice);
+                CharacterFormLock.UnLock(CharacterModel.CharacterForm.Mist);
+            }
             Loading.Run(TargetScene);
         }
     }
