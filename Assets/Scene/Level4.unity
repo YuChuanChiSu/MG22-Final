@@ -3871,7 +3871,7 @@ MonoBehaviour:
 
     pass
 
-    go|Credits
+    go|Summary2
 
 '
   ReInteractable: 0
@@ -31235,7 +31235,7 @@ PrefabInstance:
 
         pass
 
-        go|Credits'
+        go|Summary1'
       objectReference: {fileID: 0}
     - target: {fileID: 774785454593463243, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: ReInteractable
