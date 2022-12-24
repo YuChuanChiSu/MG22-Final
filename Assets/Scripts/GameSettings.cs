@@ -25,9 +25,9 @@ public class GameSettings : MonoBehaviour
         {
             if (stackTrace == "" || stackTrace == null) stackTrace = new System.Diagnostics.StackTrace().ToString();
             Dump("[ÖÂÃü]" + condition + "\n" + stackTrace);
-            GameObject go = Instantiate(Resources.Load<GameObject>("ErrorReport"));
+            /**GameObject go = Instantiate(Resources.Load<GameObject>("ErrorReport"));
             go.transform.Find("Report").GetComponent<Text>().text = condition + "\n" + stackTrace;
-            go.SetActive(true);
+            go.SetActive(true);**/
         }
         catch
         {
