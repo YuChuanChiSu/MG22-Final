@@ -191,7 +191,7 @@ public class CharacterController : ObservableMonoBehavior
             Hp40.SetActive(false);
             Hp60.SetActive(false);
             Hp80.SetActive(false);
-            Hp100.SetActive(true);
+            Hp100.SetActive(false);
             Hp20.SetActive(false);
             Hp0.SetActive(true);
             if(isDeath == true)
