@@ -3871,7 +3871,7 @@ MonoBehaviour:
 
     pass
 
-    go|Credits
+    go|SummarySample
 
 '
   ReInteractable: 0
@@ -31231,7 +31231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 774785454593463243, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode
-      value: "ending|be\r\npass\r\ngo|Credits\r"
+      value: 'ending|be
+
+        pass
+
+        go|SummarySample'
       objectReference: {fileID: 0}
     - target: {fileID: 774785454593463243, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: ReInteractable

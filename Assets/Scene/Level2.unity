@@ -6490,7 +6490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2206284949194353759, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.32
+      value: -6.43
       objectReference: {fileID: 0}
     - target: {fileID: 2206284949194353759, guid: 35b2dc0650611cf4184d9b6c0f7f4f5a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8207,7 +8207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4400261467422021836, guid: fd388de4827361f40ba9c1819ef0a71d, type: 3}
       propertyPath: m_Text
-      value: "\u81EA\u7531\u7684\u96FE\uFF01\u6284\u8FD1\u8DEF\u7684\u96FE\uFF01"
+      value: "\u81EA\u7531\u7684\u6C14\uFF01\u6284\u8FD1\u8DEF\u7684\u6C14\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 4400261467422021837, guid: fd388de4827361f40ba9c1819ef0a71d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9908,10 +9908,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8939456820863564977, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939456820863564982, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
+      propertyPath: m_Size.x
+      value: 5.226877
+      objectReference: {fileID: 0}
     - target: {fileID: 8939456820863564982, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 909cf5b1241c7ce44a7866211eb1421d, type: 3}
+    - target: {fileID: 8939456820863564983, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
+      propertyPath: m_Size.x
+      value: 5.171674
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939456820863564983, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.003633976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939456820863564983, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5.226877
+      objectReference: {fileID: 0}
     - target: {fileID: 8939456821505037925, guid: 55fb2b50d19355740bc0799472681fc0, type: 3}
       propertyPath: m_RootOrder
       value: 7
