@@ -13652,6 +13652,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBase
       objectReference: {fileID: 0}
+    - target: {fileID: 245547111420592127, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 292218963011688767, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 438290237731600862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093654280979279049, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     - target: {fileID: 2175791415324943408, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13687,6 +13703,26 @@ PrefabInstance:
     - target: {fileID: 3058344843265461925, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462276921498903283, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470460894698051409, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751999309158322917, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805343816442098232, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897519514171741270, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
       objectReference: {fileID: 0}
     - target: {fileID: 3976905619504276242, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -13804,9 +13840,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 447.99976
       objectReference: {fileID: 0}
+    - target: {fileID: 4621107251857423313, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238383241105346032, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005426910920665476, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221593645719669305, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     - target: {fileID: 6598134187672886555, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode
       value: "Gene|\u79BB\u6211\u4EEC\u7684\u76EE\u6807\u66F4\u8FD1\u4E86\u3002|\u7A7A\u70751\r\nChole|\u6211\u4EEC\uFF1F|\u7591\u60D11\r\nGene|\u6211\u4EEC\u3002|\u7A7A\u70751\r\nshow\npass"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411718064599806613, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
       objectReference: {fileID: 0}
     - target: {fileID: 7459369440770387996, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_RootOrder
@@ -13867,6 +13923,14 @@ PrefabInstance:
     - target: {fileID: 8350623467602098595, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392400183136161504, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776660358951688239, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
@@ -14984,7 +15048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlotTag: Entry
-  PlotCode: "Chole|\u201C\u6C99\u6F20\u822C\u7684\u6D77\u6D0B\u3002\u201D|\u5E73\u97591\r\nGene|\u201C\u4ECB\u5B50\u6811\u7684\u89E6\u624B\u80FD\u7CBE\u51C6\u6355\u6349\u6BCF\u4E00\u6EF4\u6C34\u5206\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C\u4ECB\u5B50\u6811\uFF1F\u8FD9\u573A\u5929\u707E\u7684\u59CB\u4F5C\u4FD1\u8005\u5417\uFF1F\u201D|\u7591\u60D11\r\nGene|\u201C\u8089\u4F53\u5B89\u5B9A\uFF0C\u7075\u9B42\u6253\u8F6C\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C...\u201D|\u5E73\u97591\r\nshow"
+  PlotCode: "Chole|\u201C\u6C99\u6F20\u822C\u7684\u6D77\u6D0B\u3002\u201D|\r\nGene|\u201C\u4ECB\u5B50\u6811\u7684\u89E6\u624B\u80FD\u7CBE\u51C6\u6355\u6349\u6BCF\u4E00\u6EF4\u6C34\u5206\u3002\u201D|\r\nChole|\u201C\u4ECB\u5B50\u6811\uFF1F\u8FD9\u573A\u5929\u707E\u7684\u59CB\u4F5C\u4FD1\u8005\u5417\uFF1F\u201D|\r\nGene|\u201C\u8089\u4F53\u5B89\u5B9A\uFF0C\u7075\u9B42\u6253\u8F6C\u3002\u201D|\r\nChole|\u201C...\u201D|\r\nshow"
   ReInteractable: 0
 --- !u!114 &1791252282
 MonoBehaviour:

@@ -5986,7 +5986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlotTag: Entry
-  PlotCode: "Chole|\u201C\u4E0E\u6211\u4E0D\u540C\u7684\u4EBA\u7C7B\u3002\u201D|\u5E73\u97591\r\nGene|\u201C\u8EAF\u4F53\u56E0\u4F9B\u751F\u800C\u626D\u66F2\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C\u8C01\u7684\u751F\u547D\u6B32\u56FE\u51CC\u9A7E\u4F17\u751F\u3002\u201D|\u60B2\u4F241\r\nGene|\u201C\u4FEF\u4EF0\u65F6\u95F4\u4E98\u6CB3\uFF0C\u68EE\u6797\u6CD5\u5219\u65E0\u7F6A\u3002\u201D|\u7A7A\u70751\r\nChole|\u201C...\u201D|\u5E73\u97591\r\nshow"
+  PlotCode: "Chole|\u201C\u4E0E\u6211\u4E0D\u540C\u7684\u4EBA\u7C7B\u3002\u201D|\r\nGene|\u201C\u8EAF\u4F53\u56E0\u4F9B\u751F\u800C\u626D\u66F2\u3002\u201D|\r\nChole|\u201C\u8C01\u7684\u751F\u547D\u6B32\u56FE\u51CC\u9A7E\u4F17\u751F\u3002\u201D|\r\nGene|\u201C\u4FEF\u4EF0\u65F6\u95F4\u4E98\u6CB3\uFF0C\u68EE\u6797\u6CD5\u5219\u65E0\u7F6A\u3002\u201D|\r\nChole|\u201C...\u201D|\r\nshow"
   ReInteractable: 0
 --- !u!114 &528949900
 MonoBehaviour:
@@ -49125,6 +49125,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBase
       objectReference: {fileID: 0}
+    - target: {fileID: 245547111420592127, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 292218963011688767, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 438290237731600862, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093654280979279049, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     - target: {fileID: 2215266330973545979, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: MaxStep
       value: 3
@@ -49164,6 +49180,26 @@ PrefabInstance:
     - target: {fileID: 3263211252469822610, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462276921498903283, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470460894698051409, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751999309158322917, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805343816442098232, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897519514171741270, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
       objectReference: {fileID: 0}
     - target: {fileID: 3976905619504276242, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -49333,6 +49369,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4621107251857423313, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238383241105346032, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     - target: {fileID: 5831274231760555772, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -49341,9 +49385,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6005426910920665476, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221593645719669305, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     - target: {fileID: 6598134187672886555, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: PlotCode
       value: "Gene|\u770B\u6765\u4F60\u5DF2\u7ECF\u660E\u767D\u4E0B\u4E00\u4E2A\u6625\u5929\u600E\u6837\u5230\u6765\xB7\xB7\xB7|\u7A7A\u70751\r\nChole|\u5F53\u88AB\u9057\u5FD8\u7684\u79CD\u5B50\uFF0C\u68A6\u4E2D\u7684\u6625\u5929\u6216\u8BB8\u66F4\u52A0\u9999\u751C\u3002|\u60B2\u4F242\r\nGene|\u4E00\u9897\u4E0D\u518D\u5F00\u82B1\u7684\u6811\uFF0C\u4E3A\u4EC0\u4E48\u8FD8\u8FD9\u6837\u7EFF\u7740\uFF1F|\u7A7A\u70751\r\nChole|...|\u5E73\u97591\r\nshow\npass"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411718064599806613, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
       objectReference: {fileID: 0}
     - target: {fileID: 7459369440770387996, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
       propertyPath: m_RootOrder
@@ -49401,6 +49457,14 @@ PrefabInstance:
       propertyPath: bgm
       value: 
       objectReference: {fileID: 8300000, guid: b2507e4b2448e474f9bad3056d60801b, type: 3}
+    - target: {fileID: 8392400183136161504, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776660358951688239, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.99988
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4eeaf777865b064288eb2969ef094af, type: 3}
 --- !u!20 &1241669104 stripped
