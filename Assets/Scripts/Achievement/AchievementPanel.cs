@@ -12,7 +12,11 @@ public class AchievementPanel : ObservablePanelMono<AchievementCollection>
     {
         int i = 0;
         foreach(var item in Panel.Achievements)
+        {
+            if (i == 12)
+                break;
             Panel.SetPanelEnable(i++, item);
+        }
     }
 
 }
